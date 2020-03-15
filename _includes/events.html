@@ -1,0 +1,81 @@
+
+
+<!-- Section 1
+				============================================= -->
+
+
+<section class="section my-0" style="padding-top: 60px;">
+
+	{% assign events = site.events | sort_by: 'order' | reverse %}
+	{% assign first = 1 %}
+
+	{% for event in events %}
+
+
+	{% if event.float == 'right' %}
+	<div class="section-product clearfix">
+	
+		{% if first == 1 %}
+		<div class="heading-block bottommargin nobottomborder center">
+			<h3>Events</h3>
+		</div>
+		{% endif %}
+
+		<div class="container clearfix my-5 py-5">
+			<div class="section-product-image">
+				<img src="{{ event.image | relative_url }}" alt="">
+			</div>
+			<div class="section-product-content edge-underline rellax" style="bottom: {% if page.event-pos %} {{ page.event-pos }}{% else %} {{ layout.event-pos }}{% endif %}%; right: 7%;" data-rellax-speed="-2">
+				<h3> {{ event.name }}</h3>
+				<p>{{ event.description }}</p>
+				<div class="row justify-content-center clearfix">
+					<div class="col-6 align-items-center">
+						<div class="section-product-price">{{ site.dates }}</div>
+					</div>
+					<div class="col-6 align-items-center">
+						<a href="{{event.url}}"
+							class="button button-border button-circle button-fill fill-from-bottom button-dark button-black nott t400 nomargin"><span>Read
+								More</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{% else %}
+
+	<div class="section-product alt pt-2 pt-lg-4 toppadding notopmargin nobottommargin clearfix">
+		<div class="container clearfix  my-5 py-5">
+			<div class="section-product-image">
+				<img src="{{ event.image | relative_url }}" alt="">
+			</div>
+			<div class="section-product-content hide-on-play edge-underline rellax" style="bottom: {% if page.event-pos %} {{ page.event-pos }}{% else %} {{ layout.event-pos }}{% endif %}%; left: 7%;"
+				data-rellax-speed="-2">
+				<h3>{{ event.name }}</h3>
+				<p>{{ event.description }}</p>
+				<div class="row justify-content-center clearfix">
+					<div class="col-6 align-items-center">
+						<div class="section-product-price">{{ site.dates }}</div>
+					</div>
+					<div class="col-6 align-items-center">
+						<a href="{{event.url}}"
+							class="button button-border button-circle button-fill fill-from-bottom button-dark button-black nott t400 nomargin"><span>Read
+								More</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	{% endif %}
+
+	{% assign first = 0 %}
+
+	{% endfor %}
+
+	<div id="particles-js-green"></div>
+</section>
+
+
+
+
+	<!-- #section-speaker end -->

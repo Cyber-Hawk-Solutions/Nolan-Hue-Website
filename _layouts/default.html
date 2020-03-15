@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="{{ site.locale | slice: 0,2 | default: 'en' }}" class="no-js">
+  <head>
+    {% include head.html %}
+    {% include head/custom.html %}
+  </head>
+
+  <body 
+    class="stretched layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %} {% if page.layout != 'home' %} sticky-footer {% endif %}">
+
+    {%- comment -%} {% include browser-upgrade.html %} {%- endcomment -%}
+    
+    {%- comment -%} <div id="preloader">
+      <div id="preloader-logo"></div>
+    </div> {%- endcomment -%}
+
+   {% include masthead.html %}
+
+    <div id="content" class="initial-content">
+      {{ content }}
+    </div>
+
+    <div class="page__footer">
+        {% include footer/custom.html %}
+        {% include footer.html %}
+    </div>
+
+    {% include scripts.html %}
+
+  </body>
+</html>

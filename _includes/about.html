@@ -1,0 +1,31 @@
+<div class="section nomargin nobg clearfix">
+  <div class="container-fluid clearfix">
+
+    <div class="heading-block bottommargin nobottomborder center">
+      <h3>Our Mission </h3>
+    </div>
+
+    <!-- Shop
+    ============================================= -->
+    <div class="row px-4 mx-3 clearfix">
+
+      <!-- Shop - 1
+      ============================================= -->
+      {% for mission in site.missions %}
+      <div class="col-sm-4 col-12  product showcase-section clearfix">
+        <div class="showcase-target-images">
+          <img class="" alt="Image" id="product-1-black" src="{{mission.image}}">
+        </div>
+        <div class="product-desc list-inline center">
+
+          <div class="product-title mt-2">
+            <h2><a href="#" class="t400">{{mission.title}}</h2>
+          </div>
+          <div class="product-price">{{mission.body}}</div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <!-- Row End -->
+  </div> <!-- Container End -->
+</div> <!-- Shop Section End -->
