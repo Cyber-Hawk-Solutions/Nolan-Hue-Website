@@ -471,3 +471,119 @@ body, #wrapper, .css3-spinner, #header.dark.sticky-header.transparent-header #he
 	border-radius: 50%;
 	margin-bottom: 20px;
 }
+
+.move-bg:after {
+	content: '';
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(to left,  rgba(30,35,42,0) 26%,rgb(30, 35, 42) 75%,rgba(30,35,42,1) 100%);
+}
+
+.vertical-middle {
+	padding-top: 70px !important;
+}
+
+
+
+.feature-content {
+    position: absolute;
+    top: -25px;
+    left: -25px;
+    width: 300px;
+    height: 300px;
+}
+
+
+.circle-border {
+    position: relative;
+    margin-top: 25px;
+    margin-left: 25px;
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    height: 250px;
+		width: 250px;
+}
+
+.circle-inner {
+	border-radius: 50%;
+	width: 80px;
+	height: 80px;
+	padding: 4px;
+	background: #FFF;
+	box-shadow: 0 0 35px rgba(140, 152, 164, 0.2);
+	text-align: center;
+	line-height: 1;
+	box-sizing: content-box;
+	white-space: nowrap;
+}
+
+.circle-inner:before {
+	content: "";
+	display: inline-block;
+	vertical-align: middle;
+	padding-top: 100%;
+	height: 0;
+}
+
+.counter {
+	position: relative;
+	top: -75px;
+	font-size: 28px;
+	font-weight: 600;
+	font-family: 'Raleway', sans-serif;
+}
+
+.counter + h5 {
+	font-family: 'Nunito', sans-serif !IMPORTANT;
+	font-weight: 400;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin-top: 10px;
+	position: relative;
+	top: -75px;
+}
+
+@media (min-width: 992px) {
+	.feature-content {
+			top: -50px;
+			left: -50px;
+			width: 500px;
+			height: 500px;
+	}
+
+	.circle-border {
+		height: 400px;
+		width: 400px;
+	}
+
+	.circle-inner {
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+	}
+
+	.section-about:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: transparent;
+    background-image: url(images/dots-1.png);
+    background-image: var(--section-about-bg);
+    background-repeat: no-repeat;
+    background-position: top right;
+    transform: rotate(-180deg);
+    background-size: 40%;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+	}
+}
+
+
+.background-grey {
+	background: #1d2229;
+}

@@ -46,6 +46,56 @@
 	<script src="{{'assets/js/rs-plugin/js/extensions/revolution.extension.slideanims.min.js' | relative_url}}"></script>
 	<script src="{{'assets/js/rs-plugin/js/extensions/revolution.extension.video.min.js' | relative_url}}"></script>
 
+
+	<script>
+
+		jQuery(document).ready( function(){
+
+			if( !jQuery('body').hasClass('device-touch') ) {
+
+				var lFollowX = 0,
+					lFollowY = 0,
+					x = 0,
+					y = 0,
+					friction = 1 / 30;
+
+				function moveBackground() {
+					x += (lFollowX - x) * friction;
+					y += (lFollowY - y) * friction;
+
+					translate = 'translate(' + x + 'px, ' + y + 'px) scale(1.1)';
+
+					jQuery('.move-bg').css({
+						'-webit-transform': translate,
+						'-moz-transform': translate,
+						'transform': translate
+					});
+
+					window.requestAnimationFrame(moveBackground);
+				}
+
+				jQuery(window).on('mousemove click', function(e) {
+
+					var lMouseX = Math.max(-100, Math.min(100, jQuery(window).width() / 2 - e.clientX));
+					var lMouseY = Math.max(-100, Math.min(100, jQuery(window).height() / 2 - e.clientY));
+					lFollowX = (10 * lMouseX) / 100; // 100 : 12 = lMouxeX : lFollow
+					lFollowY = (10 * lMouseY) / 100;
+
+				});
+
+				moveBackground();
+
+				jQuery(".book-wrap").hover3d({
+					selector: ".book-card",
+					shine: false,
+				});
+
+			}
+
+		});
+
+	</script>
+	
 	<script>
 
 		
@@ -108,7 +158,7 @@
 
 	<script>
 
-		particlesJS.load('particles-js', "{{'assets/js/particlesjs-config.json' | relative_url}}", function() {
+		particlesJS.load('particles-js', "{{'assets/js/particlesjs-simple-config.json' | relative_url}}", function() {
 			console.log('callback - particles.js config loaded');
 		});
 
