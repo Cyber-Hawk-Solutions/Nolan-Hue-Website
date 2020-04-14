@@ -93,6 +93,9 @@
 /* ----------------------------------------------------------------
 	Bootstrap Adjustments
 -----------------------------------------------------------------*/
+body,html {
+	background-color: #1d2229 !important;
+}
 
 @media (min-width: 576px) {
 	.container { max-width: 540px; }

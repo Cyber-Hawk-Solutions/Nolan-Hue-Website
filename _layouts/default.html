@@ -6,15 +6,13 @@
   </head>
 
   <body 
-    class="stretched layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %} {% if page.layout != 'home' %} sticky-footer {% endif %}">
+    class="no-transition stretched layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %} {% if page.layout != 'home' %} sticky-footer {% endif %}">
 
     {%- comment -%} {% include browser-upgrade.html %} {%- endcomment -%}
     
-    {%- comment -%} <div id="preloader">
-      <div id="preloader-logo"></div>
-    </div> {%- endcomment -%}
+    {% include loader.html %}
 
-   {% include masthead.html %}
+    {% include masthead.html %}
 
     <div id="content" class="initial-content">
       {{ content }}

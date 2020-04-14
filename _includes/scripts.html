@@ -48,58 +48,13 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"
 	integrity="sha256-XJuslujM3cGzRZGiSi/KNSdk58uORO/mmrEQNjVtb5k=" crossorigin="anonymous"></script>
-<script>
-	new WOW().init();
-</script>
+
 
 <script>
-
-	jQuery(document).ready(function () {
-
-		if (!jQuery('body').hasClass('device-touch')) {
-
-			var lFollowX = 0,
-				lFollowY = 0,
-				x = 0,
-				y = 0,
-				friction = 1 / 30;
-
-			function moveBackground() {
-				x += (lFollowX - x) * friction;
-				y += (lFollowY - y) * friction;
-
-				translate = 'translate(' + x + 'px, ' + y + 'px) scale(1.1)';
-
-				jQuery('.move-bg').css({
-					'-webit-transform': translate,
-					'-moz-transform': translate,
-					'transform': translate
-				});
-
-				window.requestAnimationFrame(moveBackground);
-			}
-
-			jQuery(window).on('mousemove click', function (e) {
-
-				var lMouseX = Math.max(-100, Math.min(100, jQuery(window).width() / 2 - e.clientX));
-				var lMouseY = Math.max(-100, Math.min(100, jQuery(window).height() / 2 - e.clientY));
-				lFollowX = (10 * lMouseX) / 100; // 100 : 12 = lMouxeX : lFollow
-				lFollowY = (10 * lMouseY) / 100;
-
-			});
-
-			moveBackground();
-
-			jQuery(".book-wrap").hover3d({
-				selector: ".book-card",
-				shine: false,
-			});
-
-		}
-
-	});
-
+	/* FADES IT OUT WHEN PAGE LOADS */
+		$('#global-spinner').addClass('fadeOut'); //UNCOMMENT ME
 </script>
+
 
 <!-- ADD-ONS JS FILES -->
 <script>
@@ -113,257 +68,122 @@
 		function onLoad() {
 
 			setTimeout(()=>{
-			var waypoint = new Waypoint({
-				element: document.getElementById('rev_slider_120_1'),
-				handler: setTimeout(function (direction) {
+				slider()
 
-					if (tpj === undefined) {
-						tpj = jQuery;
+			if (!jQuery('body').hasClass('device-touch')) {
 
-						if ("off" == "on") tpj.noConflict();
-					}
-					if (tpj("#rev_slider_120_1").revolution == undefined) {
-						revslider_showDoubleJqueryError("#rev_slider_120_1");
-					} else {
-						revapi120 = tpj("#rev_slider_120_1").show().revolution({
-							sliderType: "hero",
-							jsFileLocation: "include/rs-plugin/js/",
-							sliderLayout: "fullwidth",
-							dottedOverlay: "none",
-							delay: 9000,
-							navigation: {
-							},
-							viewPort: {
-								enable: true,
-								outof: "wait",
-								visible_area: "80%",
-								presize: true
-							},
-							responsiveLevels: [1240, 1024, 778, 778],
-							visibilityLevels: [1240, 1024, 778, 778],
-							gridwidth: [1240, 1024, 778, 778],
-							gridheight: [900, 900, 800, 800],
-							lazyType: "none",
-							parallax: {
-								type: "scroll",
-								origo: "slidercenter",
-								speed: 400,
-								speedbg: 0,
-								speedls: 1000,
-								levels: [3, 6, 9, 12, 15, 18, 21, -3, -6, -9, -12, -15, -18, -21, -16, 55],
-							},
-							shadow: 0,
-							spinner: "off",
-							autoHeight: "off",
-							disableProgressBar: "on",
-							hideThumbsOnMobile: "off",
-							hideSliderAtLimit: 0,
-							hideCaptionAtLimit: 0,
-							hideAllCaptionAtLilmit: 0,
-							debugMode: false,
-							fallbacks: {
-								simplifyAll: "off",
-								disableFocusListener: false,
-							}
-						});
-					}; /* END OF revapi call */
+				var lFollowX = 0,
+					lFollowY = 0,
+					x = 0,
+					y = 0,
+					friction = 1 / 30;
 
-					RsTypewriterAddOn(tpj, revapi120);
-				}, 1000)
-			},  { offset: '70%'})}, 2000)
+				function moveBackground() {
+					x += (lFollowX - x) * friction;
+					y += (lFollowY - y) * friction;
+
+					translate = 'translate(' + x + 'px, ' + y + 'px) scale(1.1)';
+
+					jQuery('.move-bg').css({
+						'-webit-transform': translate,
+						'-moz-transform': translate,
+						'transform': translate
+					});
+
+					window.requestAnimationFrame(moveBackground);
+				}
+
+				jQuery(window).on('mousemove click', function (e) {
+
+					var lMouseX = Math.max(-100, Math.min(100, jQuery(window).width() / 2 - e.clientX));
+					var lMouseY = Math.max(-100, Math.min(100, jQuery(window).height() / 2 - e.clientY));
+					lFollowX = (10 * lMouseX) / 100; // 100 : 12 = lMouxeX : lFollow
+					lFollowY = (10 * lMouseY) / 100;
+
+				});
+
+				moveBackground();
+
+				jQuery(".book-wrap").hover3d({
+					selector: ".book-card",
+					shine: false,
+				});
+
+			}
+
+
+			setTimeout(() => {
+				var waypoint = new Waypoint({
+					element: document.getElementById('rev_slider_120_1'),
+					handler: setTimeout(function (direction) {
+
+						if (tpj === undefined) {
+							tpj = jQuery;
+
+							if ("off" == "on") tpj.noConflict();
+						}
+						if (tpj("#rev_slider_120_1").revolution == undefined) {
+							revslider_showDoubleJqueryError("#rev_slider_120_1");
+						} else {
+							revapi120 = tpj("#rev_slider_120_1").show().revolution({
+								sliderType: "hero",
+								jsFileLocation: "include/rs-plugin/js/",
+								sliderLayout: "fullwidth",
+								dottedOverlay: "none",
+								delay: 9000,
+								navigation: {
+								},
+								viewPort: {
+									enable: true,
+									outof: "wait",
+									visible_area: "80%",
+									presize: true
+								},
+								responsiveLevels: [1240, 1024, 778, 778],
+								visibilityLevels: [1240, 1024, 778, 778],
+								gridwidth: [1240, 1024, 778, 778],
+								gridheight: [900, 900, 800, 800],
+								lazyType: "none",
+								parallax: {
+									type: "scroll",
+									origo: "slidercenter",
+									speed: 400,
+									speedbg: 0,
+									speedls: 1000,
+									levels: [3, 6, 9, 12, 15, 18, 21, -3, -6, -9, -12, -15, -18, -21, -16, 55],
+								},
+								shadow: 0,
+								spinner: "off",
+								autoHeight: "off",
+								disableProgressBar: "on",
+								hideThumbsOnMobile: "off",
+								hideSliderAtLimit: 0,
+								hideCaptionAtLimit: 0,
+								hideAllCaptionAtLilmit: 0,
+								debugMode: false,
+								fallbacks: {
+									simplifyAll: "off",
+									disableFocusListener: false,
+								}
+							});
+						}; /* END OF revapi call */
+
+						RsTypewriterAddOn(tpj, revapi120);
+					}, 1000)
+				}, { offset: '70%' })
+			}, 2000)
+			new WOW().init();
+			},0000);
 
 		}; /* END OF ON LOAD FUNCTION */
 
 	}()); /* END OF WRAPPING FUNCTION */
 </script>
 
-<script>
-
-
-	jQuery(document).ready(function () {
-
-		$("#particles-js").appendTo("#SLIDE1");
-
-
-		const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-
-		if (vw > 1198) {
-
-			console.log('vw', vw);
-			var rellax = new Rellax('.rellax');
-			// on hover Changes Scripts -->
-			function showcaseSection(element) {
-				var otherElements = element.parents('.showcase-section').find('.showcase-feature'),
-					elementTarget = jQuery(element.attr('data-target')),
-					otherTargets = element.parents('.showcase-section').find('.showcase-target');
-
-				otherElements.removeClass('showcase-feature-active');
-				element.addClass('showcase-feature-active');
-				otherTargets.removeClass('showcase-target-active');
-				elementTarget.addClass('showcase-target-active');
-			}
-
-			jQuery('.showcase-section').each(function () {
-				if (jQuery(this).find('.showcase-feature-active').length < 1) {
-					jQuery(this).find('.showcase-feature:eq(0)').addClass('showcase-feature-active');
-				}
-			});
-
-			var elementActive = jQuery('.showcase-feature-active');
-
-			elementActive.each(function () {
-				showcaseSection(jQuery(this));
-			});
-
-			jQuery('.showcase-feature').hover(function () {
-				showcaseSection(jQuery(this));
-			}); // --> Scripts End.
-
-		}
-	});
-
-	$('#ytb-video-button').on('click', function (e) {
-		e.preventDefault();
-
-		if ($(this).hasClass('video-played')) {
-			$('#ytb-video').YTPMute();
-			$('.hide-on-play').stop(true, true).fadeTo("slow", 1);
-		} else {
-			$('#ytb-video').YTPUnmute();
-			$('.hide-on-play').stop(true, true).fadeTo("slow", 0.05);
-		}
-
-		$(this).toggleClass('video-played');
-	});
-</script>
 
 <script>
-
-	particlesJS.load('particles-js', "{{'assets/js/particlesjs-simple-config.json' | relative_url}}", function () {
-		console.log('callback - particles.js config loaded');
-	});
-
-	particlesJS.load('particles-js-green', "{{'assets/js/particlesjs-config-green.json' | relative_url }}", function () {
-		console.log('callback - particles.js config loaded');
-	});
-
-	$('#google-map').gMap({
-		address: 'Melbourne, Australia',
-		maptype: 'ROADMAP',
-		zoom: 14,
-		markers: [
-			{
-				address: "Melbourne, Australia",
-				html: '<div style="width: 300px;"><h4 style="margin-bottom: 8px;">Hi, we\'re <span>Envato</span></h4><p class="nobottommargin">Our mission is to help people to <strong>earn</strong> and to <strong>learn</strong> online. We operate <strong>marketplaces</strong> where hundreds of thousands of people buy and sell digital goods every day, and a network of educational blogs where millions learn <strong>creative skills</strong>.</p></div>',
-				icon: {
-					image: "assets/images/icons/map-icon-red.png",
-					iconsize: [32, 39],
-					iconanchor: [32, 39]
-				}
-			}
-		],
-		doubleclickzoom: false,
-		controls: {
-			panControl: true,
-			zoomControl: true,
-			mapTypeControl: true,
-			scaleControl: false,
-			streetViewControl: false,
-			overviewMapControl: false
-		}
-
-	});
-
-</script><!-- Google Map End -->
-
-<script>
-
-	// Hover Script
-	jQuery(".img-hover-wrap").hover3d({
-		selector: ".img-hover-card",
-		shine: false,
-	});
-
-</script>
-
-<!-- <script>
-	var revapi108,
-	tpj=jQuery;
-			tpj(document).ready(function() {
-	if(tpj("#welcome").revolution == undefined){
-		revslider_showDoubleJqueryError("#welcome");
-	}else{
-		revapi108 = tpj("#welcome").show().revolution({
-			sliderType:"hero",
-			jsFileLocation:"assets/js/rs-plugin/js/",
-			sliderLayout:"fullscreen",
-			dottedOverlay:"none",
-			delay:9000,
-			particles: {startSlide: "first", endSlide: "last", zIndex: "1",
-				particles: {
-					number: {value: 80}, color: {value: "#ffffff"},
-					shape: {
-						type: "circle", stroke: {width: 0, color: "#ffffff", opacity: 1},
-						image: {src: ""}
-					},
-					opacity: {value: 0.2, random: true, min: 0.1, anim: {enable: false, speed: 3, opacity_min: 0, sync: false}},
-					size: {value: 2, random: false, min: 30, anim: {enable: false, speed: 40, size_min: 1, sync: false}},
-					line_linked: {enable: true, distance: 150, color: "#ffffff", opacity: 0.2, width: 1},
-					move: {enable: true, speed: 6, direction: "none", random: true, min_speed: 6, straight: false, out_mode: "out"}},
-				interactivity: {
-					events: {onhover: {enable: true, mode: "repulse"}, onclick: {enable: false, mode: "repulse"}},
-					modes: {grab: {distance: 400, line_linked: {opacity: 0.1}}, bubble: {distance: 400, size: 40, opacity: 0.4}, repulse: {distance: 100}}
-				}
-			},
-			navigation: {
-			},
-			viewPort: {
-				enable:true,
-				outof:"wait",
-				visible_area:"80%",
-				presize:true
-			},
-			responsiveLevels:[1240,1024,778,480],
-			visibilityLevels:[1240,1024,778,480],
-			gridwidth:[1240,1024,778,480],
-			gridheight:[868,768,960,720],
-			lazyType:"none",
-			parallax: {
-				type:"scroll",
-				origo:"slidercenter",
-				speed:400,
-				speedbg:0,
-				speedls:0,
-				levels:[5,10,15,20,25,30,35,40,45,46,47,48,49,50,51,55],
-			},
-			shadow:0,
-			spinner:"spinner3",
-			autoHeight:"off",
-			fullScreenAutoWidth:"off",
-			fullScreenAlignForce:"off",
-			fullScreenOffsetContainer: "",
-			fullScreenOffset: "",
-			disableProgressBar:"on",
-			hideThumbsOnMobile:"off",
-			hideSliderAtLimit:0,
-			hideCaptionAtLimit:0,
-			hideAllCaptionAtLilmit:0,
-			debugMode:false,
-			fallbacks: {
-				simplifyAll:"off",
-				disableFocusListener:false,
-			}
-		});
-	}
-
-	RsTypewriterAddOn(tpj, revapi108);
-
-	RsParticlesAddOn(revapi108);
-});	/*ready*/
-</script> -->
-
-<script>
-	var revapi109,
+function slider(){
+		var revapi109,
 		tpj = jQuery;
 	tpj(document).ready(function () {
 		if (tpj("#welcome").revolution == undefined) {
@@ -686,4 +506,114 @@
 
 		RsRevealerAddOn(tpj, revapi109, "<div class='rsaddon-revealer-spinner rsaddon-revealer-spinner-1'><div class='rsaddon-revealer-1'><span style='background: {{color}}'><\/span><span style='background: {{color}}'><\/span><span style='background: {{color}}'><\/span><span style='background: {{color}}'><\/span><span style='background: {{color}}'><\/span><span style='background: {{color}}'><\/span><span style='background: {{color}}'><\/span><span style='background: {{color}}'><\/span><span style='background: {{color}}'><\/span><span style='background: {{color}}'><\/span><\/div><\/div \/>");
 	});	/*ready*/
+
+}
+</script>
+<script>
+
+
+	jQuery(document).ready(function () {
+
+		$("#particles-js").appendTo("#SLIDE1");
+
+
+		const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+
+		if (vw > 1198) {
+
+			console.log('vw', vw);
+			var rellax = new Rellax('.rellax');
+			// on hover Changes Scripts -->
+			function showcaseSection(element) {
+				var otherElements = element.parents('.showcase-section').find('.showcase-feature'),
+					elementTarget = jQuery(element.attr('data-target')),
+					otherTargets = element.parents('.showcase-section').find('.showcase-target');
+
+				otherElements.removeClass('showcase-feature-active');
+				element.addClass('showcase-feature-active');
+				otherTargets.removeClass('showcase-target-active');
+				elementTarget.addClass('showcase-target-active');
+			}
+
+			jQuery('.showcase-section').each(function () {
+				if (jQuery(this).find('.showcase-feature-active').length < 1) {
+					jQuery(this).find('.showcase-feature:eq(0)').addClass('showcase-feature-active');
+				}
+			});
+
+			var elementActive = jQuery('.showcase-feature-active');
+
+			elementActive.each(function () {
+				showcaseSection(jQuery(this));
+			});
+
+			jQuery('.showcase-feature').hover(function () {
+				showcaseSection(jQuery(this));
+			}); // --> Scripts End.
+
+		}
+	});
+
+	$('#ytb-video-button').on('click', function (e) {
+		e.preventDefault();
+
+		if ($(this).hasClass('video-played')) {
+			$('#ytb-video').YTPMute();
+			$('.hide-on-play').stop(true, true).fadeTo("slow", 1);
+		} else {
+			$('#ytb-video').YTPUnmute();
+			$('.hide-on-play').stop(true, true).fadeTo("slow", 0.05);
+		}
+
+		$(this).toggleClass('video-played');
+	});
+</script>
+
+<script>
+
+	particlesJS.load('particles-js', "{{'assets/js/particlesjs-simple-config.json' | relative_url}}", function () {
+		console.log('callback - particles.js config loaded');
+	});
+
+	particlesJS.load('particles-js-green', "{{'assets/js/particlesjs-config-green.json' | relative_url }}", function () {
+		console.log('callback - particles.js config loaded');
+	});
+
+	$('#google-map').gMap({
+		address: 'Melbourne, Australia',
+		maptype: 'ROADMAP',
+		zoom: 14,
+		markers: [
+			{
+				address: "Melbourne, Australia",
+				html: '<div style="width: 300px;"><h4 style="margin-bottom: 8px;">Hi, we\'re <span>Envato</span></h4><p class="nobottommargin">Our mission is to help people to <strong>earn</strong> and to <strong>learn</strong> online. We operate <strong>marketplaces</strong> where hundreds of thousands of people buy and sell digital goods every day, and a network of educational blogs where millions learn <strong>creative skills</strong>.</p></div>',
+				icon: {
+					image: "assets/images/icons/map-icon-red.png",
+					iconsize: [32, 39],
+					iconanchor: [32, 39]
+				}
+			}
+		],
+		doubleclickzoom: false,
+		controls: {
+			panControl: true,
+			zoomControl: true,
+			mapTypeControl: true,
+			scaleControl: false,
+			streetViewControl: false,
+			overviewMapControl: false
+		}
+
+	});
+
+</script><!-- Google Map End -->
+
+<script>
+
+	// Hover Script
+	jQuery(".img-hover-wrap").hover3d({
+		selector: ".img-hover-card",
+		shine: false,
+	});
+
 </script>
