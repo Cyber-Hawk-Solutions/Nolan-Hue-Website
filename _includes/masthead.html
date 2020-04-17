@@ -1,27 +1,42 @@
-	<header id="header" class="split-menu transparent-header dark static-sticky" data-sticky-class="semi-transparent">
+{% if page.layout != "home" %}
+		
+		{% include hero.html %}
+
+{% endif %}
+
+<header id="header" class="split-menu transparent-header dark static-sticky" data-sticky-class="semi-transparent">
 
 
-		<div id="header-wrap">
+	<div id="header-wrap">
 
-			<div class="container clearfix">
+		<div class="container clearfix">
 
-				<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+			<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
 
-				<!-- Logo ============================================= -->
-				<div id="logo">
-					<a href="index.html" class="standard-logo"><img
-							src="assets/images/logo.png" alt="Canvas Logo"></a>
-					<a href="index.html" class="retina-logo"><img
-							src="assets/images/logo@2x.png" alt="Canvas Logo"></a>
-				</div>
-				<!-- #logo end -->
-
-				{% include nav.html %}
-
+			<!-- Logo ============================================= -->
+			<div id="logo">
+				<a href="index.html" class="standard-logo"><img src="assets/images/logo.png" alt="Canvas Logo"></a>
+				<a href="index.html" class="retina-logo"><img src="assets/images/logo@2x.png" alt="Canvas Logo"></a>
 			</div>
+			<!-- #logo end -->
+
+			{% include nav.html %}
 
 		</div>
 
-	</header><!-- #header end -->
-  {% include hero.html %}
-</div>
+	</div>
+
+</header><!-- #header end -->
+
+
+{% if page.layout == "home" %}
+<!-- {% for slide in page.slides %}
+      <img src="{{ slide.src }}">
+    {% endfor %} -->
+		
+		{% include hero.html %}
+
+
+{% endif %}
+
+<div style="position: relative; display: contents;" class="clearfix"></div>

@@ -650,3 +650,33 @@ body, #wrapper, .css3-spinner, #header.dark.sticky-header.transparent-header #he
 	position: relative;
 	z-index: 2
 }
+
+#header-wrap {
+	position: relative;
+}
+
+.text-emphasis {
+	font-size:48px; 
+}
+
+
+.animated.delay-0-2s {
+  -webkit-animation-delay: 0.25s;
+	animation-delay: 0.25s;
+	
+}
+
+.animated.delay-0-5s {
+  -webkit-animation-delay: 0.5s;
+	animation-delay: 0.5s;
+}
+
+.animated.delay-0-7s {
+  -webkit-animation-delay: 0.75s;
+	animation-delay: 0.75s;
+}
+
+.animated.delay-1-5s {
+  -webkit-animation-delay: 1.5s;
+	animation-delay: 1.5s;
+}

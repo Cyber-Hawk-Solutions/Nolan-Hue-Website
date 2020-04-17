@@ -67,9 +67,9 @@
 
 		function onLoad() {
 
-			setTimeout(()=>{
-				slider()
-
+			slider();
+			
+			
 			if (!jQuery('body').hasClass('device-touch')) {
 
 				var lFollowX = 0,
@@ -173,7 +173,6 @@
 				}, { offset: '70%' })
 			}, 2000)
 			new WOW().init();
-			},0000);
 
 		}; /* END OF ON LOAD FUNCTION */
 
@@ -516,13 +515,20 @@ function slider(){
 
 		$("#particles-js").appendTo("#SLIDE1");
 
+		setTimeout(()=>{
+			$('.rellax').removeClass('animated');
+			$('.remove-animation').removeClass('animated');
+			var rellax = new Rellax('.rellax');
+		}, 1200)
+
+
 
 		const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 
 		if (vw > 1198) {
 
 			console.log('vw', vw);
-			var rellax = new Rellax('.rellax');
+			
 			// on hover Changes Scripts -->
 			function showcaseSection(element) {
 				var otherElements = element.parents('.showcase-section').find('.showcase-feature'),
