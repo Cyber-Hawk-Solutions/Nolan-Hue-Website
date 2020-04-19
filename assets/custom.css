@@ -657,6 +657,23 @@ body, #wrapper, .css3-spinner, #header.dark.sticky-header.transparent-header #he
 
 .text-emphasis {
 	font-size:48px; 
+	/* opacity: 0; */
+	/* visibility: hidden; */
+}
+
+.scroll-title {
+	font-size: 84px;
+	color: rgba(255, 255, 255, 0.09);
+	top: 200px;
+	text-shadow: none;
+}
+
+.p-right{
+	background-position: right !important;
+}
+
+.p-left{
+	background-position: left !important;
 }
 
 
@@ -680,3 +697,9 @@ body, #wrapper, .css3-spinner, #header.dark.sticky-header.transparent-header #he
   -webkit-animation-delay: 1.5s;
 	animation-delay: 1.5s;
 }
+
+
+.portfolio-item {
+	min-height: 100vh !important;
+}
+

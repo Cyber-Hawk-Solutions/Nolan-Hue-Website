@@ -47,8 +47,12 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"
-	integrity="sha256-XJuslujM3cGzRZGiSi/KNSdk58uORO/mmrEQNjVtb5k=" crossorigin="anonymous"></script>
-
+integrity="sha256-XJuslujM3cGzRZGiSi/KNSdk58uORO/mmrEQNjVtb5k=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.115.0/build/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/hover-effect@1.1.0/dist/hover-effect.umd.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
 
 <script>
 	/* FADES IT OUT WHEN PAGE LOADS */
@@ -109,10 +113,84 @@
 					shine: false,
 				});
 
+				var controller = new ScrollMagic.Controller();
+
+				// build scenes using a loop
+				$(".scroll-title").each(function(i) {
+				let thisLine = $(this);
+
+
+				var action = gsap.timeline()
+				.fromTo(thisLine,{ x:'-60%'}, {x:'-50%', duration: window.innerWidth,} )				
+					
+
+				new ScrollMagic.Scene({
+					triggerElement: this,
+					duration: 1000,
+					triggerHook: 0.8
+				})
+					.setTween(action)
+					//.addIndicators()
+					.addTo(controller)
+				});
+
+
 			}
 
 
 			setTimeout(() => {
+
+				let last_known_scroll_position = 0;
+				let ticking = false;
+
+
+				$('.text-blend').css('opacity','0')
+				window.addEventListener('scroll', function(e) {
+					last_known_scroll_position = window.scrollY;
+
+
+					if (!ticking) {
+						window.requestAnimationFrame(function() {
+							if (last_known_scroll_position == 0)
+								$('.text-blend').hide()
+							else 
+								$('.text-blend').show()
+							ticking = false;
+						});
+
+						ticking = true;
+					}
+				});
+
+
+
+								// the animation to use
+				// const tl = gsap.timeline();
+				// tl.from("h1", {scale: 5});
+
+				// // The start and end positions in terms of the page scroll
+				// const startY = innerHeight / 10;
+				// const finishDistance = innerHeight / 5;
+
+				// Listen to the scroll event
+				// document.addEventListener("scroll", function() {
+				// 	// Prevent the update from happening too often (throttle the scroll event)
+				// 	if (!requestId) {
+				// 		requestId = requestAnimationFrame(update);
+				// 	}
+				// });
+
+				// update();
+
+				// function update() {
+				// 	// Update our animation
+				// 	tl.progress((scrollY - startY) / finishDistance);
+					
+				// 	// Let the scroll event fire again
+				// 	requestId = null;
+				// }
+
+
 				var waypoint = new Waypoint({
 					element: document.getElementById('rev_slider_120_1'),
 					handler: setTimeout(function (direction) {
@@ -171,8 +249,21 @@
 						RsTypewriterAddOn(tpj, revapi120);
 					}, 1000)
 				}, { offset: '70%' })
-			}, 2000)
+			}, 2500)
 			new WOW().init();
+
+			{% for event in site.events %}
+			var myAnimation = new hoverEffect({
+        parent: document.querySelector('.{{event.shortName}}-distort'),
+        intensity: 0.1,
+        image1: '{{ event.banner | relative_url}}',
+				image2: '{{ event.banner2 | relative_url}}',
+				angle: Math.PI / 2,
+        displacementImage: '{{ 'assets/images/transition.jpg' | relative_url}}'
+			});
+			{% endfor %}
+
+
 
 		}; /* END OF ON LOAD FUNCTION */
 
