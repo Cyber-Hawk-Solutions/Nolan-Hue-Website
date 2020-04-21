@@ -7,11 +7,11 @@
     <span style="display: none;">{% if reverse == true %} {% assign reverse = false %} {% elsif reverse == false %} {% assign reverse = true %} {% endif %} {{ reverse }}</span>
     <div class="col-md-12 col-lg-6 d-flex" style="background-color: {% cycle "#444", "#ffc013", "#e10000" %} ; justify-content: center; align-items: center; flex-flow: column; padding: 8vw!important">
       <a href="">
-        <h2 class="text-light wow animated fadeInUp" > {{event.name}} </h2>
+        <h2 class="text-light wow animated fadeInUp delay-0-5s" > {{event.name}} </h2>
       </a>
-      <p class="{% cycle "text-light", "text-dark", "text-dark" %} wow animated fadeInUp">{{event.description}} </p>
+      <p class="{% cycle "text-light", "text-dark", "text-dark" %} wow animated fadeInUp  delay-0-7s">{{event.description}} </p>
 
-      <h1 style="font-size: 48px;  position: absolute; top:68%; z-index:1; white-space: pre-wrap; width: 340vw; color:{% cycle "#ffffff17", "#ffc013bd", "#e1000087" %}; " class="scroll-title">
+      <h1 style="font-size: 48px;  position: absolute; top:68%; z-index:1; white-space: pre-wrap; width: 340vw; color:{% cycle "#ffffff17", "#e1000087", "#ffc013bd" %}; " class="scroll-title">
         <strong> {% for  i in (1..25)  %}{{event.name}} {% endfor %}</strong>
       </h1>
     </div>
