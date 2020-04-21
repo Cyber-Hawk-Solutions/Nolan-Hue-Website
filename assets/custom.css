@@ -348,7 +348,7 @@
 
 
 .promo {
-	background-color: #444444 !important;
+	background-color: rgba(225, 0, 0, 1) !important;
 }
 
 
@@ -360,6 +360,7 @@ canvas.particles-js-canvas-el {
   position: absolute;
 	top: 0;
 	z-index: 1500;
+	pointer-events: none;
 }
 
 /* .layout--single-page canvas.particles-js-canvas-el, .layout--event canvas.particles-js-canvas-el {
@@ -671,6 +672,10 @@ body, #wrapper, .css3-spinner, #header.dark.sticky-header.transparent-header #he
 	color: rgba(255, 255, 255, 0.09);
 	top: 200px;
 	text-shadow: none;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
 }
 
 .p-right{
