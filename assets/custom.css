@@ -359,11 +359,12 @@
 canvas.particles-js-canvas-el {
   position: absolute;
 	top: 0;
+	z-index: 1500;
 }
 
-.layout--single-page canvas.particles-js-canvas-el, .layout--event canvas.particles-js-canvas-el {
+/* .layout--single-page canvas.particles-js-canvas-el, .layout--event canvas.particles-js-canvas-el {
 z-index: 2;
-}
+} */
 
 .card-columns .team {
 	display: inline-block;
@@ -661,6 +662,10 @@ body, #wrapper, .css3-spinner, #header.dark.sticky-header.transparent-header #he
 	/* visibility: hidden; */
 }
 
+#slider strong {
+	position: relative;
+}
+
 .scroll-title {
 	font-size: 84px;
 	color: rgba(255, 255, 255, 0.09);
@@ -702,4 +707,3 @@ body, #wrapper, .css3-spinner, #header.dark.sticky-header.transparent-header #he
 .portfolio-item {
 	min-height: 100vh !important;
 }
-
