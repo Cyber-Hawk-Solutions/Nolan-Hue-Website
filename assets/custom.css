@@ -708,6 +708,16 @@ body, #wrapper, .css3-spinner, #header.dark.sticky-header.transparent-header #he
 	animation-delay: 1.5s;
 }
 
+.animated.delay-1-7s {
+  -webkit-animation-delay: 1.75s;
+	animation-delay: 1.75s;
+}
+
+.animated.delay-2-5s {
+  -webkit-animation-delay: 2.5s;
+	animation-delay: 2.5s;
+}
+
 
 .portfolio-item {
 	min-height: 100vh !important;

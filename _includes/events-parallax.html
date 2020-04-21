@@ -9,7 +9,7 @@
       <a href="">
         <h2 class="text-light wow animated fadeInUp" > {{event.name}} </h2>
       </a>
-      <p class="{% cycle "text-light", "text-dark", "text-dark" %} wow animated fadeInUp">{{event.description}} {% cycle "#444", "#ffc013", "#e10000" %} </p>
+      <p class="{% cycle "text-light", "text-dark", "text-dark" %} wow animated fadeInUp">{{event.description}} </p>
 
       <h1 style="font-size: 48px;  position: absolute; top:68%; z-index:1; white-space: pre-wrap; width: 340vw; color:{% cycle "#ffffff17", "#ffc013bd", "#e1000087" %}; " class="scroll-title">
         <strong> {% for  i in (1..25)  %}{{event.name}} {% endfor %}</strong>
