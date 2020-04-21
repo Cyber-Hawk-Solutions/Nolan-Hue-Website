@@ -25,6 +25,7 @@ phone: +1268-23e32e32
 description: Fostering Professional Opputunities 
 phone-alt: 
 fax: 
+theme-color: "#444"
 
 # Build settings
 markdown: kramdown
