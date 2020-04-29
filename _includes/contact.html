@@ -1,3 +1,5 @@
+{% assign contact = site.sections | where: "title", "Contact" | first %}
+
 <!--==========================
       Contact Section
     ============================-->
@@ -8,16 +10,16 @@
 
     <div id="section-contact" class="page-section">
 
-    <h2 class="bottommargin text-light text-center wow  animated  fadeIn delay-1s">Get in Touch.</h2>
+    <h2 class="bottommargin text-light text-center wow  animated  fadeIn delay-1s"> {{contact.heading}}</h2>
 
       <div class="row clearfix">
 
         <div class="col-md-6  ">
           <div class="about-img position-relative d-none d-md-block">
-            <div class="my-3 my-lg-0"><div class="gradient-bg wow animated fadeInUp delay-1-7s"><img src="/assets/images/events/ne2.jpg" alt="About Image"></div></div>
-            <div data-0="top: 120px" data-end="top: 80px"><div class="gradient-bg wow animated fadeInUp delay-2s"><img style="height: 33vh;" src="/assets/images/events/yer2.jpg" alt="About Image"></div></div>
+            <div class="my-3 my-lg-0"><div class="gradient-bg wow animated fadeInUp delay-1-7s"><img src="{{contact.image1}}" alt="About Image"></div></div>
+            <div data-0="top: 120px" data-end="top: 80px"><div class="gradient-bg wow animated fadeInUp delay-2s"><img style="height: 33vh;" src="{{contact.image2}}" alt="About Image"></div></div>
           </div>
-          <img class="d-none d-sm-block d-md-none animated fadeInUp delay-1s" src="/assets/images/events/ne2.jpg" alt="About Image">
+          <img class="d-none d-sm-block d-md-none animated fadeInUp delay-1s" src="{{contact.image1}}" alt="About Image">
 
 
         </div>

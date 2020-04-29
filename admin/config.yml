@@ -6,16 +6,15 @@ media_folder: "assets/uploads" # Media files will be stored here
 
 
 collections:
-  - name: "categories" 
-    label: "Categories" 
-    folder: "_categories/" 
-    create: true 
+  - name: "about" 
+    label: "About Sections" 
+    folder: "collections/_about" 
+    create: false 
     slug: "{{slug}}" 
     identifier_field: name
     fields: 
-      - {label: "Name", name: "name", widget: "text", required: true}
-      - {label: "link", name: "link", widget: "string", required: true}
-      - {label: "Pretext", name: "pretext", widget: "text", hint: "Flavour text adjective"}
+      - {label: "Title", name: "title", widget: "text", required: true}
+      - {label: "Body", name: "body", widget: "text", required: true}
       - {label: "Image", name: "image", widget: "image", required: true}
   - name: "products" 
     label: "Products" 

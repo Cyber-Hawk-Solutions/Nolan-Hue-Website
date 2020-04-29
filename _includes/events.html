@@ -77,7 +77,11 @@
 
 <!-- Slider
 ============================================= -->
-<section id="slider" class="slider-element revslider-wrap bg-light clearfix " >
+
+{% assign events = site.sections | where: "title", "Events" | first %}
+
+
+<section id="slider" class="slider-element revslider-wrap bg-light clearfix" >
 
 	<div id="rev_slider_120_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="immersion-grid44"
 		data-source="gallery" style="margin:0px auto;background:#1d2229;padding:0px;margin-top:0px;margin-bottom:0px;">
@@ -130,8 +134,8 @@
 									data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
 									data-paddingleft="[0,0,0,0]"
 									style="z-index: 27; min-width: 480px; max-width: 480px; white-space: normal; font-size: 35px; line-height: 50px; font-weight: 400; color: #ffffff; letter-spacing: 0px; display: inline-block;font-family:Montserrat;">
-								  Transformative Events<br /><a href="https://http://themes.semicolonweb.com/html/canvas/v5/intro.html"
-										class="immersion-link2" target="_blank">Get Involved</a>. </div>
+								  {{ events.header }} <br /><a href="{{ events.link }}"
+										class="immersion-link2" target="_blank">{{ events.subheader }}</a>. </div>
 							</div>
 						</div>
 
@@ -167,8 +171,8 @@
 									data-marginleft="[0,0,0,0]" data-textAlign="['right','right','right','right']"
 									data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
 									data-paddingleft="[0,0,0,0]" style="z-index: 11; display: block;cursor:pointer;"><img
-										src="/assets/images/events/roa.jpg" alt="" data-ww="['100%','100%','100%','100%']"
-										data-hh="" data-no-retina> <h3 class="text-left" style="position: relative; top: -43px; text-shadow: #ffc013 1px 1px;">Revolution of Art</h3> </div>
+										src="{{events.events[0].thumbnail}}" alt="" data-ww="['100%','100%','100%','100%']"
+										data-hh="" data-no-retina> <h3 class="text-left" style="position: relative; top: -43px; text-shadow: #ffc013 1px 1px;"> {{events.events[0].title}} </h3> </div>
 										
 
 								<!-- LAYER NR. 8 -->
@@ -181,9 +185,9 @@
 									data-marginleft="[0,0,0,0]" data-textAlign="['right','right','right','right']"
 									data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
 									data-paddingleft="[0,0,0,0]" style="z-index: 12; display: block;cursor:pointer;"><img
-										src="/assets/images/events/roa.jpg" alt="" data-ww="['100%','100%','100%','100%']"
+										src="{{events.events[0].thumbnail}}" alt="" data-ww="['100%','100%','100%','100%']"
 										data-hh="" data-no-retina> 
-										<h3 class="text-left" style="position: relative; top: -43px; text-shadow: #ffc013 1px 1px;">Revolution of Art</h3> 
+										<h3 class="text-left" style="position: relative; top: -43px; text-shadow: #ffc013 1px 1px;">{{events.events[0].title}}</h3> 
 									</div>
 							</div>
 
@@ -208,9 +212,9 @@
 									data-marginleft="[0,0,0,0]" data-textAlign="['right','right','right','right']"
 									data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
 									data-paddingleft="[0,0,0,0]" style="z-index: 15; display: block;cursor:pointer;"><img
-										src="/assets/images/events/yer.jpg" alt="" data-ww="['100%','100%','100%','100%']"
+										src="{{events.events[1].thumbnail}}" alt="" data-ww="['100%','100%','100%','100%']"
 										data-hh="" data-no-retina> 
-										<h3 class="text-left" style="position: relative; top: -43px; text-shadow: #ffc013 1px 1px;">Youth Empowerment Retreat</h3> 
+										<h3 class="text-left" style="position: relative; top: -43px; text-shadow: #ffc013 1px 1px;"> {{events.events[1].title}} </h3> 
 									</div>
 
 								<!-- LAYER NR. 11 -->
@@ -223,9 +227,9 @@
 									data-marginleft="[0,0,0,0]" data-textAlign="['right','right','right','right']"
 									data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
 									data-paddingleft="[0,0,0,0]" style="z-index: 16; display: block;cursor:pointer;"><img
-										src="/assets/images/events/yer.jpg" alt="" data-ww="['100%','100%','100%','100%']"
+										src=" {{events.events[1].thumbnail}} " alt="" data-ww="['100%','100%','100%','100%']"
 										data-hh="" data-no-retina>
-										<h3 class="text-left" style="position: relative; top: -43px; text-shadow: #ffc013 1px 1px;">Youth Empowerment Retreat</h3> 
+										<h3 class="text-left" style="position: relative; top: -43px; text-shadow: #ffc013 1px 1px;"> {{events.events[1].title}} </h3> 
 
 									</div>
 
@@ -239,9 +243,9 @@
 									data-marginleft="[0,0,0,0]" data-textAlign="['right','right','right','right']"
 									data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
 									data-paddingleft="[0,0,0,0]" style="z-index: 17; display: block;cursor:pointer;"><img
-										src="/assets/images/events/yer.jpg" alt="" data-ww="['100%','100%','100%','100%']"
+										src="{{events.events[1].thumbnail}}" alt="" data-ww="['100%','100%','100%','100%']"
 										data-hh="" data-no-retina>
-										<h3 class="text-left" style="position: relative; top: -43px; text-shadow: #ffc013 1px 1px;">Youth Empowerment Retreat</h3> 
+										<h3 class="text-left" style="position: relative; top: -43px; text-shadow: #ffc013 1px 1px;"> {{events.events[1].title}} </h3> 
  
 									</div>
 							</div>
@@ -267,9 +271,9 @@
 									data-marginleft="[0,0,0,0]" data-textAlign="['right','right','right','right']"
 									data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
 									data-paddingleft="[0,0,0,0]" style="z-index: 19; display: block;cursor:pointer;"><img
-										src="/assets/images/events/ne.jpg" alt="" data-ww="['100%','100%','100%','100%']"
+										src="{{events.events[2].thumbnail}}" alt="" data-ww="['100%','100%','100%','100%']"
 										data-hh="" data-no-retina>
-										<h3 class="text-left" style="position: relative; top: -43px; text-shadow: #ffc013 1px 1px;">Networking Event</h3> 
+										<h3 class="text-left" style="position: relative; top: -43px; text-shadow: #ffc013 1px 1px;"> {{events.events[2].title}} </h3> 
  
 									</div>
 
@@ -283,9 +287,9 @@
 									data-marginleft="[0,0,0,0]" data-textAlign="['right','right','right','right']"
 									data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
 									data-paddingleft="[0,0,0,0]" style="z-index: 20; display: block;cursor:pointer;"><img
-										src="/assets/images/events/ne.jpg" alt="" data-ww="['100%','100%','100%','100%']"
+										src="{{events.events[2].thumbnail}}" alt="" data-ww="['100%','100%','100%','100%']"
 										data-hh="" data-no-retina>
-										<h3 class="text-left" style="position: relative; top: -43px; text-shadow: #ffc013 1px 1px;">Networking Event</h3>  
+										<h3 class="text-left" style="position: relative; top: -43px; text-shadow: #ffc013 1px 1px;"> {{events.events[2].title}} </h3>  
 									</div>
 										
 							</div>
@@ -324,9 +328,8 @@
 									data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
 									data-paddingleft="[0,0,0,0]"
 									style="display: inline-block !important; z-index: 23; min-width: 480px; max-width: 480px; white-space: normal; font-size: 35px; line-height: 50px; font-weight: 400; color: #ffffff; letter-spacing: 0px; display: inline-block;font-family:Montserrat;">
-									Raise The Standard.<br />
-									Raise it <a href="https://revolution.themepunch.com/direct-customer-benefits/"
-										class="immersion-link2" target="_blank">Boldly</a>.  <br/> <br/> </div> <br/>
+									{{events.footer}} <a href="{{events.footer-link}}"
+										class="immersion-link2" target="_blank">{{events.footer-link-text}}</a>.  <br/> <br/> </div> <br/>
 
 								<!-- LAYER NR. 19 -->
 								<div class="tp-caption   tp-resizeme rs-parallaxlevel-1" id="slide-277-layer-86"
@@ -340,9 +343,9 @@
 									data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
 									data-paddingleft="[0,0,0,0]"
 									style="display: inline !important; z-index: 24; min-width: 100%px; max-width: 100%px; white-space: normal; font-size: 17px; line-height: 30px; font-weight: 400; color: rgba(255,255,255,0.5); letter-spacing: 0px; display: inline-block;font-family:Montserrat;">
-									<a href="http://themeforest.net/item/canvas-the-multipurpose-html5-template/9228123?ref=SemiColonWeb&license=regular&open_purchase_for_item_id=9228123&purchasable=source"
-										style="display: table-cell; vertical-align: middle;" class="button button-circle button-xlarge bg-light text-dark button-light nott ls0 nomargin">See
-										Events <i class="icon-line-arrow-right ml-1"></i></a></div>
+									<a href="{{events.footer-button.link}}"
+										style="display: table-cell; vertical-align: middle;" class="button button-circle button-xlarge bg-light text-dark button-light nott ls0 nomargin">
+										{{events.footer-button.text}} <i class="icon-line-arrow-right ml-1"></i></a></div>
 							</div>
 						</div>
 					</div>

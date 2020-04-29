@@ -1,16 +1,19 @@
-		<!-- Slider
+{% assign heroSection = site.sections | where: "title", "Home" | first %}
+{% assign hero = heroSection.hero %}
+
+<!-- Slider
 		============================================= -->
 		<section id="slider" class="slider-element clearfix" style="background:#1E232A; height: 800px;">
-			<div class="move-bg" style="background: url('assets/images/hero/hero.jpg') center center no-repeat; background-size: cover;"></div>
+			<div class="move-bg" style="background: url('{{ hero.image}}') center center no-repeat; background-size: cover;"></div>
 			<div class="vertical-middle ignore-header" style="z-index: 3; padding-top: 70px;">
 				<div class="container dark clearfix">
 					<div class="row clearfix">
 						<div class="col-lg-6 offset-lg-1 col-md-8" data-lightbox="gallery">
 							<div class="emphasis-title bottommargin-sm">
-								<h1 id="hero-title" class="400" >Fostering Professional<br><span><em>Oppurtunities</em></span>.</h1>
+								<h1 id="hero-title" class="400" >{{ hero.title }}</h1>
 							</div>
-							<a id="hero-button1"  class="button button-large button-border button-white button-light button-rounded capitalize notopmargin"><span>Who are we?</span></a><br class="d-block d-sm-none">
-							<a id="hero-button2"  href="https://www.youtube.com/watch?v=auJWC-o-RiY" class="hero-action-link d-inline-block ml-2 mt-2 ml-sm-3 mt-sm-0" data-lightbox="iframe"><i class="icon-play-sign"></i> Highlight reel</a>
+							<a id="hero-button1"  href="{{ hero.buttons[0].link }}" class="button button-large button-border button-white button-light button-rounded capitalize notopmargin"><span>{{ hero.buttons[0].text }}</span></a><br class="d-block d-sm-none">
+							<a id="hero-button2"  href="{{ hero.buttons[1].link }}" class="hero-action-link d-inline-block ml-2 mt-2 ml-sm-3 mt-sm-0" data-lightbox="iframe"><i class="icon-play-sign"></i> {{ hero.buttons[1].text }}</a>
 						</div>
 					</div>
 				</div>
