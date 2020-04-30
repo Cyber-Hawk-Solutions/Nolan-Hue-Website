@@ -64,3 +64,16 @@ collections:
             fields: 
               - {label: "Text", name: "text", widget: "string"}
               - {label: "Link", name: "link", widget: "string", default: "#"}
+  - name: "events" 
+    label: "Events" 
+    folder: "collections/_events" 
+    create: true 
+    slug: "{{slug}}" 
+    identifier_field: name
+    fields: 
+      - {label: "Name", name: "name", widget: "text", required: true}
+      - {label: "Subtitle", name: "subtitle", widget: "text", required: true}
+      - {label: "Description", name: "description", widget: "text", required: true}
+      - {label: "Image", name: "banner", widget: "image", required: true, }
+      - {label: "Short Name", name: "shortName", widget: "hidden", default: "{{slug}}", required: true}
+
