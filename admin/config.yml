@@ -14,7 +14,7 @@ collections:
         file: "collections/_sections/hero.md"
         fields:
           - {label: Title, name: heading, widget: string}
-          - {label: Image, name: image, widget: string, default: "assets/images/hero/hero.jpg"}
+          - {label: Image, name: image, widget: image}
           - label: Buttons
             name: "buttons"
             widget: "list"
