@@ -10,7 +10,7 @@ collections:
     name: "sections"
     files:
       - label: "Hero"
-        name: "about"
+        name: "hero"
         file: "collections/_sections/hero.md"
         fields:
           - {label: Title, name: heading, widget: string}
