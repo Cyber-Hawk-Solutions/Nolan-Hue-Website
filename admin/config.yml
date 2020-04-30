@@ -34,7 +34,7 @@ collections:
             name: stats
             widget: list
             fields:
-              - {label: Label, name: string, widget: string}
+              - {label: Label, name: label, widget: string}
               - {label: Value, name: value, widget: number}
           - label: Button
             name: "button"
