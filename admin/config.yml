@@ -75,5 +75,5 @@ collections:
       - {label: "Subtitle", name: "subtitle", widget: "text", required: true}
       - {label: "Description", name: "description", widget: "text", required: true}
       - {label: "Image", name: "banner", widget: "image", required: true, }
-      - {label: "Short Name", name: "shortName", widget: "hidden", default: "{{slug}}", required: true}
+      - {label: "Short Name", name: "shortName", widget: "hidden", default: "{{slug}}"}
 
