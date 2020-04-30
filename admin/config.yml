@@ -46,15 +46,14 @@ collections:
         name: "events"
         file: "collections/_sections/events.md"
         fields:
-          - {label: Title, name: heading, widget: string}
-          - {label: Subtitle, name: subheading, widget: string}
+          - {label: Title, name: header, widget: string}
+          - {label: Subtitle, name: subheader, widget: string}
           - {label: Link, name: link, widget: string}
-          - {label: Image, name: image, widget: string}
           - label: Events
             name: "events"
             widget: "list"
             fields: 
-              - {label: "Text", name: "text", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
               - {label: "Thumnbail", name: "thumbnail", widget: "image", default: "#"}
           - {label: "Footer Heading", name: footer, widget: string}
           - {label: "Footer Link Text", name: footer-link-text, widget: string}
