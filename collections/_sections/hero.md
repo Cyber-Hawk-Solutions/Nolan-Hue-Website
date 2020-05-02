@@ -1,6 +1,6 @@
 ---
 title: Home
-heading: Fostering Professional<br><span><em>Oppurtunities</em></span>.
+heading: Fostering Professional Development<br><span><em>Opportunities</em></span>.
 image: /assets/uploads/hero.jpg
 buttons:
   - text: Who Are We?
