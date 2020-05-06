@@ -40,7 +40,8 @@
 		// 	return barbaTl2;
 		// }
 
-		console.log("GONNA TRY")
+		var controller = new ScrollMagic.Controller();
+
 
 		barba.init({
 
@@ -65,7 +66,6 @@
 		barba.hooks.enter((data) => {
 			$(window).scrollTop(0); // scroll to top here
 
-			console.log("ENTER")
 			loadBarb(data);
 			reinitTheme();
 		});
@@ -75,7 +75,6 @@
 
 		function loadBarb(data) {
 
-			console.log("PAGE LOADED", data)
 			let tl = gsap.timeline();
 
 			tl.to('#global-spinner', {
@@ -148,10 +147,19 @@
 
 			particlesJS.load('particles-js', "{{'assets/js/particlesjs-simple-config.json' | relative_url}}", function () {
 				console.log('callback - particles.js config loaded');
-			});
+				setTimeout(()=>{
+					let particleAction = gsap.timeline()
+						.to('.particles-js-canvas-el', { autoAlpha: 0.2, duration: window.innerHeight, })
 
-			particlesJS.load('particles-js-green', "{{'assets/js/particlesjs-config-green.json' | relative_url }}", function () {
-				console.log('callback - particles.js config loaded');
+					new ScrollMagic.Scene({
+						triggerElement: 'body',
+						duration: 1000,
+						triggerHook: 0
+					})
+					.setTween(particleAction)
+					// .addIndicators()
+					.addTo(controller)
+				}, 300)
 			});
 
 			$('#google-map').gMap({
@@ -224,7 +232,6 @@
 				});
 
 
-				var controller = new ScrollMagic.Controller();
 
 				// build scenes using a loop
 				$(".scroll-title").each(function (i) {
@@ -255,19 +262,7 @@
 				// .addIndicators()
 				.addTo(controller)
 
-				setTimeout(()=>{
-					let particleAction = gsap.timeline()
-						.to('.particles-js-canvas-el', { autoAlpha: 0.15, duration: window.innerHeight, })
 
-					new ScrollMagic.Scene({
-						triggerElement: 'body',
-						duration: 1000,
-						triggerHook: 0
-					})
-					.setTween(particleAction)
-					// .addIndicators()
-					.addTo(controller)
-				}, 2000)
 
 			}
 
