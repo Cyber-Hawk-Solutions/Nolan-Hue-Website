@@ -6,24 +6,31 @@
   </head>
 
   <body 
-    class="no-transition stretched layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %} {% if page.layout != 'home' %} sticky-footer {% endif %}">
+    data-barba="wrapper" class="{{ page.path }} no-transition stretched layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %} {% if page.layout != 'home' %} sticky-footer {% endif %}">
 
     {%- comment -%} {% include browser-upgrade.html %} {%- endcomment -%}
     
     {% include loader.html %}
 
-    {% include masthead.html %}
+    <div data-barba="container" data-barba-namespace="{{page.slug}}">
 
-    <div id="content" class="initial-content">
-      {{ content }}
+      {% include masthead.html %}
+
+      <div id="content" class="initial-content" >
+        {{ content }}
+      </div>      
+
+     
+    
     </div>
 
     <div class="page__footer">
-        {% include footer/custom.html %}
-        {% include footer.html %}
+      {% include footer/custom.html %}
+      {% include footer.html %}
     </div>
-
     {% include scripts.html %}
+    {% include scripts-barba.html %}
+
 
   </body>
 </html>

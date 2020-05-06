@@ -357,7 +357,7 @@
 }
 
 canvas.particles-js-canvas-el {
-  position: absolute;
+  position: fixed;
 	top: 0;
 	z-index: 1500;
 	pointer-events: none;
@@ -434,7 +434,8 @@ z-index: 2;
 }
 
 body, #wrapper, .css3-spinner, #header.dark.sticky-header.transparent-header #header-wrap:not(.not-dark) {
-  background-color: #fff;
+	background-color: #fff;
+	/* background: transparent !important; */
 }
 
 

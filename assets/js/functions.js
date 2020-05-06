@@ -1403,11 +1403,14 @@ var SEMICOLON = SEMICOLON || {};
 
 		init: function() {
 
+			// if (!window.location.pathname == "/"){
 			SEMICOLON.slider.sliderParallaxDimensions();
 			SEMICOLON.slider.sliderRun();
 			SEMICOLON.slider.sliderParallax();
 			SEMICOLON.slider.sliderElementsFade();
-			SEMICOLON.slider.captionPosition();
+			SEMICOLON.slider.captionPosition();				
+			// }
+
 
 		},
 
