@@ -1,7 +1,7 @@
 ---
 footer-button:
   text: See Events
-  link: "#"
+  link: "/events"
 footer-link: https://http://themes.semicolonweb.com/html/canvas/v5/intro.html
 header: Transformative Events
 subheader: Get Involved
