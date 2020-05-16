@@ -732,3 +732,8 @@ body, #wrapper, .css3-spinner, #header.dark.sticky-header.transparent-header #he
 	top: 0px;
 	left: 0px;
 }
+
+
+.sm-form-control {
+	color: #eee !important;
+}

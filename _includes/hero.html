@@ -13,7 +13,7 @@
   <div class="">
 
     <div class="full-screen force-full-screen rellax" data-rellax-speed="-9"
-      style="background: url('{{ page.banner-image | relative_url}}') center center no-repeat; background-size: cover;">
+      style="background: url('{% if page.banner-image %} {{ page.banner-image | relative_url}} {% else %}/assets/uploads/ne2.jpg{% endif %}') center center no-repeat; background-size: cover;">
 
       <span class="text-blend"><h1 style="color: white;" class="text-emphasis  vertical-middle center rellax  fadeInUp delay-0-2s" data-rellax-speed="7">
         <strong >{{page.title}}</strong></h1></span>
