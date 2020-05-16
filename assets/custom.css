@@ -737,3 +737,7 @@ body, #wrapper, .css3-spinner, #header.dark.sticky-header.transparent-header #he
 .sm-form-control {
 	color: #eee !important;
 }
+
+.sticky-footer #footer{
+	z-index: -1 !important;
+}
