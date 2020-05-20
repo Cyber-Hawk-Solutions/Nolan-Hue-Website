@@ -751,3 +751,23 @@ body, #wrapper, .css3-spinner, #header.dark.sticky-header.transparent-header #he
 	width: 100%;
 	z-index: 0;
 }
+
+
+body {
+	scrollbar-width: thin;          /* "auto" or "thin"  */
+  scrollbar-color: blue orange;   /* scroll thumb & track */ 
+}
+
+body ::-webkit-scrollbar {
+	width: 0!important;
+}
+
+/* FIX FOR GETTING ANIMATION WorkING WITH LOCOMOTIVE SCROLL */
+/* .animated {
+	-webkit-animation-fill-mode: none !important;
+	animation-fill-mode: none !important;
+} */
+
+.invis {
+	opacity: 0;
+}

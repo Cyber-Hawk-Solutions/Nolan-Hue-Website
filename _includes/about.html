@@ -3,17 +3,17 @@
 <div class="section section-about m-0 background-grey text-light" style="padding: 120px 0; background-image: url('assets/images/dots-1.png') 100% 0 no-repeat / 40%;">
   <div class="container">
     <div class="row">
-      <div class="col-md-5 wow animated fadeInLeft delay-1s">
+      <div class="col-md-5" >
 
         <br>
         <!-- <h4 class="mb-0"><span class="badge badge-secondary font-body">About Us</span></h4> -->
         <div class="heading-block">
-          <h2 class="t400 ls0 nott mb-3 font-primary text-light wow animated fadeInUp "> {{content.body}}</h2>
+          <h2 data-scroll class="t400 ls0 nott mb-3 font-primary text-light animate__animated animate__fadeInUp animate__delay-1s invis "> {{content.body}}</h2>
         </div>
-        <p class="text-left wow animated fadeInUp delay-2s"> {{content.values[0]}} • {{content.values[1]}} • {{content.values[2]}} </br> {{content.values[3]}} • {{content.values[4]}} </p>
+        <p data-scroll  class="text-left animate__animated animate__fadeInUp animate__delay-2s eveinvis"> {{content.values[0]}} • {{content.values[1]}} • {{content.values[2]}} </br> {{content.values[3]}} • {{content.values[4]}} </p>
         <a href="{{content.button.link}}" class="button button-large ls0 nott ml-0 mt-2 clearfix">{{content.button.text}}</a>
       </div>
-      <div class="col-md-6 wow animated fadeInRight delay-1s offset-0 offset-md-1 mt-5 mt-md-0">
+      <div class="col-md-6 animated fadeInRight delay-1s offset-0 offset-md-1 mt-5 mt-md-0">
         <div class="circle-border">
           <div class="feature-content">
             <div class="row align-items-center justify-content-between h-100">

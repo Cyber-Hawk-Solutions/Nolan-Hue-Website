@@ -46,7 +46,6 @@
 		var revapi120,
 			tpj;
 		(function () {
-
 					// enter() {
 						
 					// 	let barbaTl2 = gsap.timeline()
@@ -71,6 +70,14 @@
 			}
 
 			function onLoad() {
+
+				try {
+					// $("body").overlayScrollbars({ className : "os-theme-dark"});
+					// $("body").overlayScrollbars({ });
+				}
+				catch {
+					console.log("Scrollbar library failed")
+				}
 	
 				console.log("PAGE LOADED")
 

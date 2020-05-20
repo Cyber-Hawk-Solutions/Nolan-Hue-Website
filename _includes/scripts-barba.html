@@ -2,12 +2,11 @@
 	============================================= -->
 <div id="gotoTop" class="icon-angle-up bgcolor"></div>
 
-
 <!-- External JavaScripts
 			============================================= -->
-<script src="{{'assets/js/rellax.min.js'  | relative_url }}"></script>
+<script src="{{'assets/plugins/locomotive-scroll.min.js'  | relative_url }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-<script src="{{'assets/js/plugins.js' | relative_url }}"></script>
+
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
@@ -31,6 +30,18 @@
 <!-- ADD-ONS JS FILES -->
 <script>
 	$(function () {
+
+		const scroll = new LocomotiveScroll({
+			el: document.querySelector('#wrapper'),
+			smooth: true,
+			getSpeed: true
+		}); 
+		
+		// const container = document.querySelector('#dapage');
+		// const ps = new PerfectScrollbar(container);
+		// window.document.getElementsByClassName('ps__rail-y')[0].style.zIndex = 999999;
+
+
 		// enter() {
 
 		// 	let barbaTl2 = gsap.timeline()
@@ -168,7 +179,8 @@
 			setTimeout(() => {
 				// $('.rellax').removeClass('animated');
 				// $('.remove-animation').removeClass('animated');
-				var rellax = new Rellax('.rellax');
+				// var rellax = new Rellax('.rellax');
+				
 			}, 2000)
 
 
@@ -218,6 +230,8 @@
 		}
 
 		function pageEffects() {
+
+
 
 			if (!jQuery('body').hasClass('device-touch')) {
 
