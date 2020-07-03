@@ -61,29 +61,6 @@
 		
 				// onLoad();
 
-			console.log("DID IT WORK?")
-			if (!/loaded|interactive|complete/.test(document.readyState)) document.addEventListener("DOMContentLoaded", ()=>{ 
-				onLoad()
-			})
-			else {
-					onLoad();
-			}
-
-			function onLoad() {
-
-				try {
-					// $("body").overlayScrollbars({ className : "os-theme-dark"});
-					// $("body").overlayScrollbars({ });
-				}
-				catch {
-					console.log("Scrollbar library failed")
-				}
-	
-				console.log("PAGE LOADED")
-
-
-				// slider();	
-
 	
 				// {% for event in site.events %}
 				// var myAnimation = new hoverEffect({
@@ -96,7 +73,6 @@
 				// 	imagesRatio: 1200 / 1800
 				// 	});
 			// {% endfor %}
-		}; /* END OF ON LOAD FUNCTION */
 
 		
 

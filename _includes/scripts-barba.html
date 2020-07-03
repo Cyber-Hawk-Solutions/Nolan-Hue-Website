@@ -29,14 +29,96 @@
 
 <!-- ADD-ONS JS FILES -->
 <script>
+		var scroll;
+		window.scrollTo(0, 0);
 	$(function () {
+	
 
-		const scroll = new LocomotiveScroll({
-			el: document.querySelector('#wrapper'),
-			smooth: true,
-			getSpeed: true
-		}); 
+
+
+
+		window.onbeforeunload = function () {
+
+			scroll.destroy()
+			$(document).scrollTop(0);
+		}
+
+			$(document).scrollTop(0);
 		
+
+		function initScroll(){
+			scroll = new LocomotiveScroll({
+				el: document.querySelector('#wrapper'),
+				smooth: true,
+				getSpeed: true,
+				getDirection: true,
+				useKeyboard: true
+			});
+			scroll.on('call', (value, way, obj) => {
+				console.log(value)
+				if (value === 'showEvents') {
+
+					showEvents()
+				}
+			});
+		}
+
+		function showEvents() {
+			
+			if (tpj === undefined) {
+				tpj = jQuery;
+
+				if ("off" == "on") tpj.noConflict();
+			}
+			if (tpj("#rev_slider_120_1").revolution == undefined) {
+				revslider_showDoubleJqueryError("#rev_slider_120_1");
+			} else {
+				revapi120 = tpj("#rev_slider_120_1").show().revolution({
+					sliderType: "hero",
+					jsFileLocation: "include/rs-plugin/js/",
+					sliderLayout: "fullwidth",
+					dottedOverlay: "none",
+					delay: 9000,
+					navigation: {
+					},
+					viewPort: {
+						enable: true,
+						outof: "wait",
+						visible_area: "80%",
+						presize: true
+					},
+					responsiveLevels: [1240, 1024, 778, 778],
+					visibilityLevels: [1240, 1024, 778, 778],
+					gridwidth: [1240, 1024, 778, 778],
+					gridheight: [900, 900, 800, 800],
+					lazyType: "none",
+					parallax: {
+						type: "scroll",
+						origo: "slidercenter",
+						speed: 400,
+						speedbg: 0,
+						speedls: 1000,
+						levels: [3, 6, 9, 12, 15, 18, 21, -3, -6, -9, -12, -15, -18, -21, -16, 55],
+					},
+					shadow: 0,
+					spinner: "off",
+					autoHeight: "off",
+					disableProgressBar: "on",
+					hideThumbsOnMobile: "off",
+					hideSliderAtLimit: 0,
+					hideCaptionAtLimit: 0,
+					hideAllCaptionAtLilmit: 0,
+					debugMode: false,
+					fallbacks: {
+						simplifyAll: "off",
+						disableFocusListener: false,
+					}
+				});
+			}; /* END OF revapi call */
+
+			RsTypewriterAddOn(tpj, revapi120);
+		}
+
 		// const container = document.querySelector('#dapage');
 		// const ps = new PerfectScrollbar(container);
 		// window.document.getElementsByClassName('ps__rail-y')[0].style.zIndex = 999999;
@@ -54,6 +136,7 @@
 		var controller = new ScrollMagic.Controller();
 		var tl = gsap.timeline();
 
+		
 
 		barba.init({
 
@@ -65,23 +148,28 @@
 
 					controller.destroy(true)
 					// tl.to('.text-emphasis', {autoAlpha: 1, duration: 0,  onComplete: function () {
-						gsap.killTweensOf()
-						tl.kill()
+					gsap.killTweensOf()
+					tl.kill()
 
-						$('.text-emphasis').css("opacity", 1)
+					$('.text-emphasis').css("opacity", 1)
 
 					// 	}
 					// })
-				
+
 					let barbaTl = gsap.timeline()
-						.to('#reveal', {xPercent: '-100', opacity:1, duration: 0})
-						.to('#reveal', {xPercent: '0', duration: 0.5})
-						.to(['#left-swipe', '#right-swipe'], { width: '0', duration: 0.5, ease: "power2.out", onComplete: function(){
-							$(window).scrollTop(0, 0); // scroll to top here
-						}})
-						// .to('.text-emphasis', {autoAlpha: 1, duration: 0 })
-						// .to('#left-swipe', { top: '50vh', duration: 0 })
-						// .to('#right-swipe', { top: '50vh', duration: 0 })
+						.to('#reveal', { xPercent: '-100', opacity: 1, duration: 0 })
+						.to('#reveal', { xPercent: '0', duration: 0.5 })
+						.to(['#left-swipe', '#right-swipe'], {
+							width: '0', duration: 0.5, ease: "power2.out", onComplete: function () {
+								scroll.scrollTo(0)
+								scroll.destroy()
+
+
+							}
+						})
+					// .to('.text-emphasis', {autoAlpha: 1, duration: 0 })
+					// .to('#left-swipe', { top: '50vh', duration: 0 })
+					// .to('#right-swipe', { top: '50vh', duration: 0 })
 
 					return barbaTl;
 
@@ -90,13 +178,15 @@
 		});
 
 		barba.hooks.enter((data) => {
+			$(window).scrollTop(0, 0);
 			tl = gsap.timeline();
 			controller = new ScrollMagic.Controller();
 
-
+			initScroll();
 
 			loadBarb(data);
 			reinitTheme();
+			
 		});
 
 		loadBarb({});
@@ -105,14 +195,17 @@
 		particles();
 
 		function loadBarb(data) {
+		
+			initScroll();
+			scroll.scrollTo(0)
 
 			try {
-			console.log("B PAGE 1", data['current']['namespace'])
+				console.log("B PAGE 1", data['current']['namespace'])
 			}
 			catch {
 
 			}
-			console.log("B PAGE 2",  window.location.pathname)
+			console.log("B PAGE 2", window.location.pathname,  Math.random())
 
 			tl.to('#global-spinner', {
 				opacity: 0, duration: 0.5, onComplete: function () {
@@ -120,20 +213,24 @@
 				}
 			})
 
-			if ( window.location.pathname == "/index" || window.location.pathname == "/") {
+			if (window.location.pathname == "/index" || window.location.pathname == "/") {
 				console.log("PAGE HOME")
 
 				tl.to(['#left-swipe', '#right-swipe'], { width: 0, duration: 2, ease: "power2.out" }, "<0")
 				tl.to('#left-swipe', { top: '50vh', duration: 0 })
 				tl.to('#right-swipe', { bottom: '50vh', duration: 0 })
-				tl.to(['#left-swipe', '#right-swipe'], { width: '100%', duration: 1, ease: "power2.out" })
+				tl.to(['#left-swipe', '#right-swipe'], { width: '100%', duration: 1, ease: "power2.out", onComplete: function(){
+
+				} })
 				tl.to('#reveal', { opacity: 0, duration: 0.5 }, ">-0.5")
 				tl.fromTo('#slider', { filter: "saturate(0.5) blur(4px)" }, { filter: "saturate(1) blur(0px)", duration: 0.5, ease: "power1.out" })
 				tl.from('#hero-button1', { opacity: 0, duration: 0.5, ease: "power2.out" }, "<0")
 				tl.from('#hero-title', { opacity: 0, y: +100, duration: 0.5, ease: "power1.out" }, "<0.3")
 				tl.from('#header-wrap', { width: 0, duration: 0.5, ease: "power2.out" })
-			} else  {
-			
+
+				// loadEvents()
+			} else {
+
 				console.log("PAGE INNER")
 				tl.to(['#left-swipe', '#right-swipe'], { width: 0, duration: 0.5, ease: "power2.out" }, "<0")
 				tl.to('#left-swipe', { top: '50vh', duration: 0 })
@@ -141,20 +238,20 @@
 				tl.to(['#left-swipe', '#right-swipe'], { width: '100%', duration: 0.7, ease: "power2.out" })
 				tl.to('#reveal', { opacity: 0, duration: 0.2 }, ">-0.1")
 				tl.from('#slider strong', { top: +300, duration: 1, stagger: 0.2 }, "<0.3")
-				tl.fromTo('#slider strong', {opacity: 0}, {
+				tl.fromTo('#slider strong', { opacity: 0 }, {
 					opacity: 1, duration: 1, stagger: 0.2, onComplete: function () {
 						$('.text-blend strong').css('opacity', '0')
 					}
 				}, "<0")
 			}
-			
+
 
 			tl.from('#primary-menu>ul>li', { opacity: 0, x: +170, stagger: 0.2, duration: 0.5, ease: "power1.out" })
 			tl.from('#logo', { opacity: 0, duration: 0.5, ease: "power2.out", }, "<0.2")
 			tl.from('#hero-button2', { opacity: 0, duration: 0.5, delay: 1, ease: "power2.out" }, "<-0.5")
 			tl.to('#left-swipe', { top: '0', duration: 0 })
 			tl.to('#right-swipe', { bottom: '0', duration: 0 })
-			
+
 			console.log("load page effects")
 			pageEffects();
 
@@ -180,13 +277,15 @@
 				// $('.rellax').removeClass('animated');
 				// $('.remove-animation').removeClass('animated');
 				// var rellax = new Rellax('.rellax');
-				
+
 			}, 2000)
 
 
 			particlesJS.load('particles-js', "{{'assets/js/particlesjs-simple-config.json' | relative_url}}", function () {
 				console.log('callback - particles.js config loaded');
-				setTimeout(()=>{
+				console.log("load scroll")
+
+				setTimeout(() => {
 					let particleAction = gsap.timeline()
 						.to('.particles-js-canvas-el', { autoAlpha: 0.2, duration: window.innerHeight, })
 
@@ -195,9 +294,9 @@
 						duration: 1000,
 						triggerHook: 0
 					})
-					.setTween(particleAction)
-					// .addIndicators()
-					.addTo(controller)
+						.setTween(particleAction)
+						// .addIndicators()
+						.addTo(controller)
 				}, 300)
 			});
 
@@ -267,6 +366,8 @@
 
 				moveBackground();
 
+
+
 				jQuery(".book-wrap").hover3d({
 					selector: ".book-card",
 					shine: false,
@@ -295,17 +396,17 @@
 				setTimeout(() => {
 
 
-					gsap.to('.text-emphasis', { autoAlpha: 0, duration: 0})
+					gsap.to('.text-emphasis', { autoAlpha: 0, duration: 0 })
 					let titleAction = gsap.timeline()
-						.fromTo('.text-emphasis', {autoAlpha: 1}, { autoAlpha: 0, duration: 1})
+						.fromTo('.text-emphasis', { autoAlpha: 1 }, { autoAlpha: 0, duration: 1 })
 
 					new ScrollMagic.Scene({
 						triggerElement: '.text-emphasis',
 						duration: 1000,
 						triggerHook: 0.25
 					})
-					.setTween(titleAction)
-					.addTo(controller)
+						.setTween(titleAction)
+						.addTo(controller)
 
 					// barba.hooks.leave(() => {
 					// 	titles.each(function (title) {
@@ -315,46 +416,46 @@
 					// });
 
 					// $(".portfolio-item .parallax-effect").each(function (i) {
-						// let wrapper = $(this);
-						// let effect = $(this);
-						let eventReveal1 = gsap.timeline()
-							.to('.parallax-effect-0', { scaleX: 0, duration: 1, transformOrigin: "center left"})
+					// let wrapper = $(this);
+					// let effect = $(this);
+					let eventReveal1 = gsap.timeline()
+						.to('.parallax-effect-0', { scaleX: 0, duration: 1, transformOrigin: "center left" })
 
 
-						new ScrollMagic.Scene({
-							triggerElement: '.parallax-effect-0',
-							triggerHook: 0,
-							offset: -300,
-							reverse: true
-						})
+					new ScrollMagic.Scene({
+						triggerElement: '.parallax-effect-0',
+						triggerHook: 0,
+						offset: -300,
+						reverse: true
+					})
 						.setTween(eventReveal1)
 						// .addIndicators()
 						.addTo(controller)
 
-						let eventReveal2 = gsap.timeline()
-							.to('.parallax-effect-1', { scaleX: 0, duration: 1, transformOrigin: "center right"})
+					let eventReveal2 = gsap.timeline()
+						.to('.parallax-effect-1', { scaleX: 0, duration: 1, transformOrigin: "center right" })
 
 
-						new ScrollMagic.Scene({
-							triggerElement: '.parallax-effect-1',
-							triggerHook: 0,
-							offset: -300,
-							reverse: true
-						})
+					new ScrollMagic.Scene({
+						triggerElement: '.parallax-effect-1',
+						triggerHook: 0,
+						offset: -300,
+						reverse: true
+					})
 						.setTween(eventReveal2)
 						// .addIndicators()
 						.addTo(controller)
 
-						let eventReveal3 = gsap.timeline()
-							.to('.parallax-effect-2', { scaleX: 0, duration: 1, transformOrigin: "center left"})
+					let eventReveal3 = gsap.timeline()
+						.to('.parallax-effect-2', { scaleX: 0, duration: 1, transformOrigin: "center left" })
 
 
-						new ScrollMagic.Scene({
-							triggerElement: '.parallax-effect-2',
-							triggerHook: 0,
-							offset: -300,
-							reverse: true
-						})
+					new ScrollMagic.Scene({
+						triggerElement: '.parallax-effect-2',
+						triggerHook: 0,
+						offset: -300,
+						reverse: true
+					})
 						.setTween(eventReveal3)
 						// .addIndicators()
 						.addTo(controller)
@@ -417,86 +518,30 @@
 				// }
 
 
-				var waypoint = new Waypoint({
-					element: document.getElementById('rev_slider_120_1'),
-					handler: setTimeout(function (direction) {
 
-						if (tpj === undefined) {
-							tpj = jQuery;
-
-							if ("off" == "on") tpj.noConflict();
-						}
-						if (tpj("#rev_slider_120_1").revolution == undefined) {
-							revslider_showDoubleJqueryError("#rev_slider_120_1");
-						} else {
-							revapi120 = tpj("#rev_slider_120_1").show().revolution({
-								sliderType: "hero",
-								jsFileLocation: "include/rs-plugin/js/",
-								sliderLayout: "fullwidth",
-								dottedOverlay: "none",
-								delay: 9000,
-								navigation: {
-								},
-								viewPort: {
-									enable: true,
-									outof: "wait",
-									visible_area: "80%",
-									presize: true
-								},
-								responsiveLevels: [1240, 1024, 778, 778],
-								visibilityLevels: [1240, 1024, 778, 778],
-								gridwidth: [1240, 1024, 778, 778],
-								gridheight: [900, 900, 800, 800],
-								lazyType: "none",
-								parallax: {
-									type: "scroll",
-									origo: "slidercenter",
-									speed: 400,
-									speedbg: 0,
-									speedls: 1000,
-									levels: [3, 6, 9, 12, 15, 18, 21, -3, -6, -9, -12, -15, -18, -21, -16, 55],
-								},
-								shadow: 0,
-								spinner: "off",
-								autoHeight: "off",
-								disableProgressBar: "on",
-								hideThumbsOnMobile: "off",
-								hideSliderAtLimit: 0,
-								hideCaptionAtLimit: 0,
-								hideAllCaptionAtLilmit: 0,
-								debugMode: false,
-								fallbacks: {
-									simplifyAll: "off",
-									disableFocusListener: false,
-								}
-							});
-						}; /* END OF revapi call */
-
-						RsTypewriterAddOn(tpj, revapi120);
-					}, 500)
-				}, { offset: '70%' })
 			}, 500)
-			new WOW().init();
 		}
 
-		function reinitTheme(){
-			$('script').each(function() {
+		function reinitTheme() {
+			$('script').each(function () {
 				if (this.src === '/assets/js/functions.js') {
 
-					this.parentNode.removeChild( this );
+					this.parentNode.removeChild(this);
 				}
 			});
 
 			let script = document.createElement('script');
 			script.src = '/assets/js/functions.js';
 			document.body.appendChild(script);
+
 			particles();
+
 		}
 
 	}()); /* END OF WRAPPING FUNCTION */
 
-	Object.prototype.hasOwnProperty = function(property) {
-    return this[property] !== undefined;
+	Object.prototype.hasOwnProperty = function (property) {
+		return this[property] !== undefined;
 	};
 </script><!-- Google Map End -->
 
@@ -509,4 +554,3 @@
 		});
 	
 	</script> -->
-
