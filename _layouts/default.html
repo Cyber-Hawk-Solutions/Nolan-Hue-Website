@@ -14,16 +14,18 @@
       {% include loader.html %}
 
       <div  data-barba="container" data-barba-namespace="{{page.slug}}">
+        <div  data-scroll-container>
 
-        {% include masthead.html %}
+          {% include masthead.html %}
 
-        <div id="content" class="initial-content" >
-          {{ content }}
-        </div>      
+          <div id="content" class="initial-content" >
+            {{ content }}
+          </div>      
 
-        <div class="page__footer">
-          {% include footer/custom.html %}
-          {% include footer.html %}
+          <div class="page__footer">
+            {% include footer/custom.html %}
+            {% include footer.html %}
+          </div>
         </div>
       
       </div>

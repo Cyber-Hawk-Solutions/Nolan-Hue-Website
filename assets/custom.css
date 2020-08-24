@@ -800,3 +800,22 @@ html, body {
 	width: 100vw;
 	height: 100vh;
 }
+
+.text-emphasis {
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	/* top: 50vh; */
+	height: 100%;
+}
+
+.text-emphasis strong {
+	display: block;
+}
+
+.scroll-title strong {
+	display: inline-block;
+	overflow: hidden;
+	height: 2.12em;
+	line-height: 48px;
+}
