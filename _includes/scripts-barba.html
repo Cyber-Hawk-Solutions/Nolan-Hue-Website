@@ -32,6 +32,7 @@
 	window.scrollTo(0, 0);
 
 	var timelineEls;
+	var timelines = {};
 	var timeline;
 
 	$(function () {
@@ -82,7 +83,31 @@
 				pinType: document.querySelector("#wrapper").style.transform ? "transform" : "fixed"
 			});
 
+			timelines["fast-spin"] = gsap.to(".scroll-title", {
+			rotation: "1080",
+			paused: true
+		});
+
+		locoScroll.on("scroll", () => {
+			 timelineEls = document.querySelectorAll("[data-scroll-timeline]");
+			for (let i = 0; i < timelineEls.length; i++) {
+				const progress = getProgress(timelineEls[i]);
+				const timelineKey = timelineEls[i].dataset.scrollTimeline;
+				timeline = timelines[timelineKey];
+				const duration = timeline.duration();
+				if (progress > 0 && progress <= 1) {
+					timeline.seek(progress * duration);
+				} else {
+					if (progress <= 0) {
+						// timelines[timelineKey].seek(0);
+					} else {
+						timelines[timelineKey].seek(duration);
+					}
+				}
+			}
+		});
 		}
+	
 
 		function getProgress(elem) {
 			var distance = elem.getBoundingClientRect();
