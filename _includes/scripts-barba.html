@@ -65,6 +65,7 @@
 				getDirection: true,
 				useKeyboard: true
 			});
+			console.log("Test lolo", locoScroll)
 
 			// each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
 			locoScroll.on("scroll", ScrollTrigger.update);
@@ -115,29 +116,25 @@
 
 			transitions: [{
 				name: 'default-transition',
-				once({current, next}){
+				once(data){
 
 					// init LocomotiveScroll on page load
-					initScroll(next.container);
+					initScroll(data.next.container);
 				},
-				afterEnter({current, next}){
+				afterEnter(data){
 
 
 					// ScrollTrigger.kill()
 					// tl.to('.text-emphasis', {autoAlpha: 1, duration: 0,  onComplete: function () {
-					initScroll(next.container);
-					console.log(locoScroll.update(), 1000)
+					initScroll(data.next.container);
+					setTimeout(()=>{
+						console.log(locoScroll.update())
+					},300)
 					
 				},
 				leave() {
 					// create your stunning leave animation here
 					
-					window.scrollTo(0, 0);
-					ScrollTrigger.kill()
-					locoScroll.destroy()
-
-					gsap.killTweensOf()
-					tl.kill()
 					$('.text-emphasis').css("opacity", 1)
 
 					// 	}
@@ -148,8 +145,8 @@
 						.to('#reveal', { xPercent: '0', duration: 0.5 })
 						.to(['#left-swipe', '#right-swipe'], {
 							width: '0', duration: 0.5, ease: "power2.out", onComplete: function () {
-								console.log("destroy loco")
-							
+								window.scrollTo(0, 0);
+
 							}
 						})
 					// .to('.text-emphasis', {autoAlpha: 1, duration: 0 })
@@ -158,6 +155,15 @@
 
 					return barbaTl;
 
+				},
+				afterLeave(){
+					console.log("destroy loco")
+
+					ScrollTrigger.kill()
+					locoScroll.destroy()
+
+					gsap.killTweensOf()
+					tl.kill()
 				}
 			}]
 		});
