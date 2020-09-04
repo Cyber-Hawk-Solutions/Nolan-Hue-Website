@@ -71,7 +71,7 @@ collections:
           - {label: Title, name: title, widget: string}
           - {label: Heading, name: heading, widget: string}
           - {label: Image, name: image1, widget: image}
-          - {label: Image 2, name: image2, widget: hidden, default: "{{image1}}}"}
+          - {label: Image 2, name: image2, widget: hidden, default: "{{image1}}"}
 
   - name: "events" 
     label: "Events" 
