@@ -21,9 +21,6 @@ collections:
             fields: 
               - {label: "Text", name: "text", widget: "string"}
               - {label: "Link", name: "link", widget: "string", default: "#"}
-      - label: "About"
-        name: "about"
-        file: "collections/_sections/about.md"
       - label: "Events"
         name: "events"
         file: "collections/_sections/events.md"
