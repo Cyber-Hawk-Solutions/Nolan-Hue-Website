@@ -57,7 +57,7 @@ collections:
               - {label: "Thumnbail", name: "thumbnail", widget: "image", default: "#"}
           - {label: "Footer Heading", name: footer, widget: string}
           - {label: "Footer Link Text", name: footer-link-text, widget: string}
-          - {label: Footer Link, name: footer-link-text, widget: string}
+          - {label: Footer Link, name: footer-link, widget: string}
           - label: Footer Button
             name: "footer-button"
             widget: "object"
