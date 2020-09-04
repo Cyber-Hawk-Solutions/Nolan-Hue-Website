@@ -27,9 +27,6 @@ collections:
         fields:
           - {label: Title, name: title, widget: string}
           - {label: Body, name: body, widget: text}
-          - label: Values
-            name: values
-            widget: list
       - label: "Events"
         name: "events"
         file: "collections/_sections/events.md"
