@@ -21,6 +21,57 @@ collections:
             fields: 
               - {label: "Text", name: "text", widget: "string"}
               - {label: "Link", name: "link", widget: "string", default: "#"}
+      - label: "About"
+        name: "about"
+        file: "collections/_sections/about.md"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Body, name: body, widget: text}
+          - label: Values
+            name: values
+            widget: list
+          - label: Stats
+            name: stats
+            widget: list
+            fields:
+              - {label: Label, name: label, widget: string}
+              - {label: Value, name: value, widget: number}
+          - label: Button
+            name: "button"
+            widget: "object"
+            fields: 
+              - {label: "Text", name: "text", widget: "string"}
+              - {label: "Link", name: "link", widget: "string", default: "#"}
+      - label: "Events"
+        name: "events"
+        file: "collections/_sections/events.md"
+        fields:
+          - {label: Title, name: header, widget: string}
+          - {label: Subtitle, name: subheader, widget: string}
+          - {label: Link, name: link, widget: string}
+          - label: Events
+            name: "events"
+            widget: "list"
+            fields: 
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Thumnbail", name: "thumbnail", widget: "image", default: "#"}
+          - {label: "Footer Heading", name: footer, widget: string}
+          - {label: "Footer Link Text", name: footer-link-text, widget: string}
+          - {label: Footer Link, name: footer-link-text, widget: string}
+          - label: Footer Button
+            name: "footer-button"
+            widget: "object"
+            fields: 
+              - {label: "Text", name: "text", widget: "string"}
+              - {label: "Link", name: "link", widget: "string", default: "#"}
+      - label: "Contact"
+        name: "contact"
+        file: "collections/_sections/contact.md"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Heading, name: heading, widget: string}
+          - {label: Image, name: image1, widget: image}
+          - {label: Image 2, name: image2, widget: hidden, default: "{{image1}}"}              
   - name: "events" 
     label: "Events" 
     folder: "collections/_events" 
