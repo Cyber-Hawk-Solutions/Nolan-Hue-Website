@@ -24,8 +24,6 @@ collections:
       - label: "About"
         name: "about"
         file: "collections/_sections/about.md"
-        fields:
-          - {label: Body, name: body, widget: text}
       - label: "Events"
         name: "events"
         file: "collections/_sections/events.md"
