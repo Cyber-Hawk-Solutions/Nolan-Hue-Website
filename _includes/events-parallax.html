@@ -5,21 +5,21 @@
 {% for event in site.events %}
   <article class="portfolio-item pf-media pf-icons row" {% if reverse %} style="flex-direction: row-reverse;"  {% endif %}>
     <span style="display: none;">{% if reverse == true %} {% assign reverse = false %} {% elsif reverse == false %} {% assign reverse = true %} {% endif %} {{ reverse }}</span>
-    <div class="col-md-12 col-lg-6 d-flex" style="z-index: 5; background-color: {% cycle "bg1": "#444", "#ffc013", "#e10000" %}; justify-content: center; align-items: center; flex-flow: column; padding: 8vw!important">
+    <div class="col-md-12 col-lg-6 d-flex" style="background-color: {% cycle "bg1": "#444", "#ffc013", "#e10000" %}; justify-content: center; align-items: center; flex-flow: column; padding: 8vw!important">
       <a href="">
         <h2 class="text-light wow animated fadeInUp delay-0-5s" > {{event.name}} </h2>
       </a>
       <p class="{% cycle "text-light", "text-dark", "text-dark" %} wow animated fadeInUp  delay-0-7s">{{event.description}} </p>
 
-      <h1 data-scroll-timeline="move-right" style="font-size: 48px;  position: absolute; top:68%; z-index:4; white-space: pre-wrap; width: 340vw; color:{% cycle "#ffffff17", "#e1000087", "#ffc013bd" %}; " class="scroll-title">
+      <h1 style="font-size: 48px;  position: absolute; top:68%; z-index:4; white-space: pre-wrap; width: 340vw; color:{% cycle "#ffffff17", "#e1000087", "#ffc013bd" %}; " class="scroll-title">
         <strong> {% for  i in (1..25)  %}{{event.name}} {% endfor %}</strong>
       </h1>
     </div>
     
     <div class="col-md-12 col-lg-6 p-0" style="position: relative;">
       <div class="parallax-effect parallax-effect-{% increment i %}" style=" background-color: {% cycle "bg2": "#444", "#ffc013", "#e10000" %} "></div>
-      <div data-scroll data-scroll-speed="-5" class="d-none d-lg-block  {% if reverse %}  p-right {% elsif reverse==false %}  p-left {% endif %} {{event.shortName}}-distort"   style="background-image: url({{ event.banner | relative_url}}); height: 100%!important; background-position: right; background-size: cover; background-position-x: right;" data-bottom-top="background-position:0px 300px;" data-top-bottom="background-position:0px -300px;"><div class="portfolio-overlay"></div></div>
-      <div data-scroll data-scroll-speed="-5" class="d-md-block d-lg-none {% if reverse %}  p-right {% elsif reverse==false %}  p-left {% endif %} img-fluid"   style="background-image: url({{ event.banner | relative_url}}); height: 100%!important; background-position: right; background-size: contain; background-position-x: right;" data-bottom-top="background-position:0px 300px;" data-top-bottom="background-position:0px -300px;"><div class="portfolio-overlay"></div></div>
+      <div  class="d-none d-lg-block portfolio-image  {% if reverse %}  p-right {% elsif reverse==false %}  p-left {% endif %} {{event.shortName}}-distort"   style="background-image: url({{ event.banner | relative_url}}); height: 100%!important; background-position: right; background-size: contain; background-position-x: right;" data-bottom-top="background-position:0px 300px;" data-top-bottom="background-position:0px -300px;"><div class="portfolio-overlay"></div></div>
+      <div  class="d-md-block d-lg-none portfolio-image {% if reverse %}  p-right {% elsif reverse==false %}  p-left {% endif %} img-fluid"   style="background-image: url({{ event.banner | relative_url}}); height: 100%!important; background-position: right; background-size: contain; background-position-x: right;" data-bottom-top="background-position:0px 300px;" data-top-bottom="background-position:0px -300px;"><div class="portfolio-overlay"></div></div>
 
       <div class="portfolio-desc text-light">
         <h3><a href="portfolio-single.html" class="text-light">{{event.subtitle}}</a></h3>

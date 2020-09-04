@@ -12,20 +12,17 @@
 
   <div class="">
 
-    <div  class="full-screen force-full-screen rellax" 
+    <div class="full-screen force-full-screen rellax" data-rellax-speed="-9"
       style="background: url('{% if page.banner-image %} {{ page.banner-image | relative_url}} {% else %}/assets/uploads/ne2.jpg{% endif %}') center center no-repeat; background-size: cover;">
 
-      <div >
-        <span class="text-blend"><h1 style="color: white;" class="text-emphasis  vertical-middle center" data-scroll data-scroll-call="heroTitleFade" data-scroll-offset="0%, -35%" data-scroll-speed="4" data-scroll-position="top">
-        <strong class="d-inline-block" >{{page.title}}</strong></h1></span>
-      <span class="text-blend"><h1 style="color: #ffc013;"  class="text-emphasis vertical-middle center" data-scroll data-scroll-call="heroTitleFade" data-scroll-offset="0%, -35%" data-scroll-speed="2" data-scroll-position="top">
+      <span class="text-blend"><h1 style="color: white;" class="text-emphasis  vertical-middle center rellax  fadeInUp delay-0-2s" data-rellax-speed="7">
         <strong >{{page.title}}</strong></h1></span>
-      <span class="text-blend"><h1 style="color: #e10000;" class="text-emphasis  vertical-middle center " data-scroll data-scroll-call="heroTitleFade" data-scroll-offset="0%, -35%" data-scroll-speed="0" data-scroll-position="top">
+      <span class="text-blend"><h1 style="color: #ffc013;"  class="text-emphasis vertical-middle center rellax  fadeInUp delay-0-5s" data-rellax-speed="5">
+        <strong >{{page.title}}</strong></h1></span>
+      <span class="text-blend"><h1 style="color: #e10000;" class="text-emphasis  vertical-middle center rellax  fadeInUp delay-0-7s" data-rellax-speed="3">
         <strong>{{page.title}}</strong></h1></span>
-      <h1 style="font-size: 48px;"  class="text-emphasis vertical-middle center  delay-1s remove-animation" data-scroll data-scroll-call="heroTitleFade" data-scroll-offset="0%, -35%" data-scroll-speed="-2" data-scroll-position="top">
+      <h1 style="font-size: 48px;"  class="text-emphasis vertical-middle center  delay-1s remove-animation">
         <strong>{{page.title}}</strong></h1>
-      </div>
-
     </div>
   </div>
 

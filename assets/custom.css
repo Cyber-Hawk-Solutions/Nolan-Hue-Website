@@ -7,11 +7,6 @@
 /* ----------------------------------------------------------------
 	Slider
 -----------------------------------------------------------------*/
-
-.slider-element {
-	z-index: 4 !important;
-}
-
 .slider-element .heading-block p	{
 	text-transform: uppercase;
 	font-style: normal;
@@ -741,81 +736,4 @@ body, #wrapper, .css3-spinner, #header.dark.sticky-header.transparent-header #he
 
 .sm-form-control {
 	color: #eee !important;
-}
-
-.sticky-footer #footer{
-	position: fixed;
-	top: auto;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	z-index: 0;
-}
-
-
-body {
-	scrollbar-width: thin;          /* "auto" or "thin"  */
-  scrollbar-color: blue orange;   /* scroll thumb & track */ 
-}
-
-body ::-webkit-scrollbar {
-	width: 0!important;
-}
-
-/* FIX FOR GETTING ANIMATION WorkING WITH LOCOMOTIVE SCROLL */
-/* .animated {
-	-webkit-animation-fill-mode: none !important;
-	animation-fill-mode: none !important;
-} */
-
-.invis {
-	opacity: 0;
-}
-
-.bg-chars {
-	z-index: 7;
-    white-space: nowrap;
-    font-size: 400px;
-    line-height: 400px;
-    font-weight: 400;
-    color: rgb(225, 0, 0);
-    letter-spacing: 0px;
-    font-family: "Playfair Display";
-    visibility: inherit;
-    transition: none 0s ease 0s;
-    text-align: center;
-    border-width: 0px;
-    margin: 0px;
-    padding: 0px 0px 10px;
-    min-height: 0px;
-    min-width: 0px;
-    max-height: none;
-    max-width: none;
-		opacity: 1;
-		display: flex;
-    flex-direction: column;
-}
-
-html, body {
-	width: 100vw;
-	height: 100vh;
-}
-
-.text-emphasis {
-	position: absolute;
-	text-align: center;
-	width: 100%;
-	/* top: 50vh; */
-	height: 100%;
-}
-
-.text-emphasis strong {
-	display: block;
-}
-
-.scroll-title strong {
-	display: inline-block;
-	overflow: hidden;
-	height: 2.12em;
-	line-height: 48px;
 }

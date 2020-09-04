@@ -8,33 +8,28 @@
   <body 
     data-barba="wrapper" class="{{ page.path }} no-transition stretched layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %} {% if page.layout != 'home' %} sticky-footer {% endif %}">
 
-    <main id="wrapper">
-      {%- comment -%} {% include browser-upgrade.html %} {%- endcomment -%}
-      
-      {% include loader.html %}
+    {%- comment -%} {% include browser-upgrade.html %} {%- endcomment -%}
+    
+    {% include loader.html %}
 
-      <div  data-barba="container" data-barba-namespace="{{page.slug}}">
-        <div  data-scroll-container class="	width: 100vw; height: 100vh; overflow: hidden;">
+    <div data-barba="container" data-barba-namespace="{{page.slug}}">
 
-          {% include masthead.html %}
+      {% include masthead.html %}
 
-          <div id="content" class="initial-content" >
-            {{ content }}
-          </div>      
+      <div id="content" class="initial-content" >
+        {{ content }}
+      </div>      
 
-          <div class="page__footer">
-            {% include footer/custom.html %}
-            {% include footer.html %}
-          </div>
-        </div>
-      
+      <div class="page__footer">
+        {% include footer/custom.html %}
+        {% include footer.html %}
       </div>
+    
+    </div>
 
-  
-      {% include scripts.html %}
-      {% include scripts-barba.html %}
-
-    </main>
+ 
+    {% include scripts.html %}
+    {% include scripts-barba.html %}
 
 
   </body>
