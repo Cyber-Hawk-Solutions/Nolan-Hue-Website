@@ -21,4 +21,4 @@ button:
   text: Read more
   link: "#"
 ---
-Nolan Hue fosters social development opportunities which positively influences people and communities.
+Nolan Hue fosters social development opportunities which positively influences people and communities. 
