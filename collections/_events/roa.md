@@ -1,5 +1,5 @@
 ---
-banner: /assets/uploads/roa.jpg
+banner: /assets/uploads/revolution-of-art-2018-3.jpg
 banner2: assets/images/events/ne2.jpg
 name: Revolution of Art
 subtitle: Supporting the arts
