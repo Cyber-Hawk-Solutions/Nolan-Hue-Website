@@ -1,15 +1,12 @@
 ---
 title: About
-body: Nolan Hue fosters social development opportunities which positively influences  people and communities.
 values:
   - Professional Development
   - Empowerment
   - Youth
   - Excellence
-  - Integrity 
-button: 
-  text: Read more
-  link: "#"
+  - Integrity
+  - Growth.
 stats:
   - value: 30
     label: Members
@@ -21,4 +18,8 @@ stats:
     label: Years
   - value: 12
     label: Partners
+button:
+  text: Read more
+  link: "#"
 ---
+Nolan Hue stimulates social development opportunities which positively influences people and communities, though youth empowerment and professional development.
