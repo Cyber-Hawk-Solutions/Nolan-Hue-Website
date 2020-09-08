@@ -4,7 +4,6 @@ values:
   - Professional Development
   - Empowerment
   - Youth
-  - Excellence
   - Integrity
   - Growth
 stats:
