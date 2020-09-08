@@ -6,6 +6,7 @@ values:
   - Youth
   - Excellence
   - Integrity
+  - Growth
 stats:
   - value: 30
     label: Members
@@ -21,4 +22,4 @@ button:
   text: Read more
   link: "#"
 ---
-Nolan Hue fosters social development opportunities which positively influences people and communities. 
+Nolan Hue fosters social development opportunities that positively influences people and communities. 
