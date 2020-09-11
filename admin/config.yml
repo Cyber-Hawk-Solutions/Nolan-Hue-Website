@@ -86,3 +86,11 @@ collections:
       - {label: "Image", name: "banner", widget: "image", required: true }
       - {label: "Short Name", name: "shortName", widget: "hidden", default: "{{slug}}"}
 
+  - label: "Pages "
+    name: "pages"
+    files:
+      - label: "About Page"
+        name: "about"
+        file: "collections/_pages/about.md"
+        fields:
+          - {label: paragraph, name: paragraph, widget: text}

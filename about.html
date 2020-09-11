@@ -1,4 +1,5 @@
 ---
+page: about
 layout: single-page
 title: What is NolanHue?
 subtitle: Get to know us
@@ -6,7 +7,18 @@ banner-image: "/assets/uploads/ne2.jpg"
 
 slug: about
 --- 
+{% assign content = site.pages | where: "page", "about" | first %}
+
+
+<div class="section section-about m-0 background-grey text-light ">
+
 
 {% include about.html %}
+
+<div class="container">
+  <h2 class="t400 ls0 nott mb-3 font-primary text-light wow animated fadeInUp "> {{content.paragraph}}</h2>
+</div>
+
+</div>
 
 {% include CTAbanner.html %}
