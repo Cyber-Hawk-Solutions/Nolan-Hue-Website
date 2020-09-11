@@ -737,3 +737,7 @@ body, #wrapper, .css3-spinner, #header.dark.sticky-header.transparent-header #he
 .sm-form-control {
 	color: #eee !important;
 }
+
+.event-description {
+	font-size: 18px;
+}
