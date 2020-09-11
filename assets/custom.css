@@ -741,3 +741,59 @@ body, #wrapper, .css3-spinner, #header.dark.sticky-header.transparent-header #he
 .event-description {
 	font-size: 18px;
 }
+
+/* Custom SCrollBar */
+::-webkit-scrollbar {
+	width: 6px
+}
+
+::-webkit-scrollbar-track {
+	background-color: transparent;
+	position: absolute;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #dc3545
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #ffc013
+}
+
+.scroll-msg {
+	transform: rotate(270deg);
+	opacity: 1;
+	position: absolute;
+	bottom: 5%;
+	right: 0%;
+	color: white;
+	font-weight: 100;
+	font-size: 24px;
+}
+
+
+.scroll-msg img {
+	transform: scale(0.5);
+}
+
+body, html, #reveal > * {
+	overflow-y:overlay;
+}
+
+body, html {
+	width: 100vw;
+	overflow-x: hidden;
+}
+
+.tp-revslider-slidesli {
+	width: 100vw;
+}
+
+#rev_slider_120_1_wrapper {
+	width: 100vw !important;
+}
+
+.full-screen, .force-full-screen {
+	width: 100vw;
+
+}

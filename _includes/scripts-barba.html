@@ -145,9 +145,14 @@
 			tl.from('#hero-button2', { opacity: 0, duration: 0.5, delay: 1, ease: "power2.out" }, "<-0.5")
 			tl.to('#left-swipe', { top: '0', duration: 0 })
 			tl.to('#right-swipe', { bottom: '0', duration: 0 })
+			tl.from(".scroll-msg", {opacity: 0, duration: 0.6})
+			tl.from(".scroll-msg", {y: -75, duration: 2, repeat: -1, yoyo: true},"<-0.5")
+
 
 			console.log("load page effects")
 			pageEffects();
+
+
 
 			// {% for event in site.events %}
 			// var myAnimation = new hoverEffect({
