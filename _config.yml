@@ -14,7 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Nolan Hue
-email: test@gmail.com        
+email: nolanhue@gmail.com        
 
 #>- # this means to ignore newlines until "baseurl:"
  
@@ -22,7 +22,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 address: 12213123
 phone: +1268-23e32e32
-description: Fostering Professional Opputunities 
+description: Fostering Professional Oppurtunities 
 phone-alt: 
 fax: 
 theme-color: "#444"
@@ -53,6 +53,8 @@ collections:
   events:
     output: true
   sections:
+    output: false
+  pages:
     output: false
 
 

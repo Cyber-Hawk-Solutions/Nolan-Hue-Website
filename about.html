@@ -7,7 +7,7 @@ banner-image: "/assets/uploads/ne2.jpg"
 
 slug: about
 --- 
-{% assign content = site.pages | where: "page", "about" | first %}
+{% assign pContent = site.pages | where: "page", "about" | first %}
 
 
 <div class="section section-about m-0 background-grey text-light ">
@@ -16,7 +16,7 @@ slug: about
 {% include about.html %}
 
 <div class="container">
-  <h2 class="t400 ls0 nott mb-3 font-primary text-light wow animated fadeInUp "> {{content.paragraph}}</h2>
+  <h2 class="t400 ls0 nott mb-3 font-primary text-light wow animated fadeInUp "> {{pContent.paragraph}}</h2>
 </div>
 
 </div>

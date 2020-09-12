@@ -26,7 +26,7 @@ collections:
         file: "collections/_sections/about.md"
         fields:
           - {label: Title, name: title, widget: string}
-          - {label: Body, name: body, widget: text}
+          - {label: Sentence, name: sentence, widget: text}
           - label: Values
             name: values
             widget: list
@@ -86,7 +86,7 @@ collections:
       - {label: "Image", name: "banner", widget: "image", required: true }
       - {label: "Short Name", name: "shortName", widget: "hidden", default: "{{slug}}"}
 
-  - label: "Pages "
+  - label: "Pages"
     name: "pages"
     files:
       - label: "About Page"
