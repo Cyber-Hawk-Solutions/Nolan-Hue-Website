@@ -1,7 +1,7 @@
 ---
 header: Transformative Events
 subheader: "It Takes a Village. "
-link: https://http://themes.semicolonweb.com/html/canvas/v5/intro.html
+link: /events
 events:
   - title: Revolution of Art
     thumbnail: /assets/uploads/roa.jpg
@@ -11,7 +11,7 @@ events:
     thumbnail: /assets/uploads/ne.jpg
 footer: Raise The Standard <br /> Raise it
 footer-link-text: Boldly
-footer-link: https://http://themes.semicolonweb.com/html/canvas/v5/intro.html
+footer-link: /events
 footer-button:
   text: See Events
   link: /events

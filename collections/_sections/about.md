@@ -20,7 +20,7 @@ stats:
     label: Partners
 button:
   text: Read more
-  link: "#"
+  link: "/about"
 sentence: Nolan Hue fosters social development opportunities that positively influences people and communities. 
 paragraph: Nolan Hue fosters social development opportunities that positively influences people and communities. Nolan Hue fosters social development opportunities that positively influences people and communities. Nolan Hue fosters social development opportunities that positively influences people and communities.  
 ---
