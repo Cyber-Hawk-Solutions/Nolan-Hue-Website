@@ -54,6 +54,8 @@ collections:
     output: true
   sections:
     output: false
+  pageContents:
+    output: false
 
 
 # Exclude from processing.

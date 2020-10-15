@@ -1,121 +1,60 @@
+<section class="py-5">
+  <h2 class="bottommargin text-light text-center wow  animated  fadeIn delay-1s"> Management Tea*</h2>
+
+  <div class="row">
+
+    <div class="bottommargin w-100">
+
+      {% assign i = 1 %}
+      {% assign reverse = false %}
+      {% for event in site.events %}
+
+      <div class="team py-5 team-list clearfix row {% if reverse == true %} d-flex flex-row-reverse {% endif %}">
+        <div class="team-image col-6 col-lg-4">
+          <div class="img-container">
+            <img src="assets/uploads/hero.jpg" alt="Nix Maxwell">
+          </div>
+        </div>
+        <div class="d-flex align-self-center flex-column team-desc col-6 col-lg-4" >
+          <div class="team-title ">
+            <h4 class="text-light {% if reverse == true %} text-right {% endif %}">Nix Maxwell</h4>
+            <span class="text-light {% if reverse == true %} text-right {% endif %}">Support</span>
+          </div>
+          <div class="team-content {% if reverse == true %} text-right {% endif %}">
+            <p class="text-light">Eradicate invest honesty human rights accessibility theory of social change. Diversity experience in the field compassion, inspire breakthroughs planned giving.</p>
+          </div>
+
+          <div class="mt-4 {% if reverse == true %} d-flex flex-row-reverse {% endif %}">
+            <a href="#" class="social-icon si-rounded si-small si-forrst text-light">
+              <i class="icon-forrst"></i>
+              <i class="icon-forrst"></i>
+            </a>
+            <a href="#" class="social-icon si-rounded si-small si-skype text-light">
+              <i class="icon-skype"></i>
+              <i class="icon-skype"></i>
+            </a>
+            <a href="#" class="social-icon si-rounded si-small si-flickr text-light">
+              <i class="icon-flickr"></i>
+              <i class="icon-flickr"></i>
+            </a>          
+          </div>
+
+        </div>
+      </div>
+
+
+      <span style="display: none;">{% if reverse == true %} {% assign reverse = false %} {% elsif reverse == false %} {% assign reverse = true %} {% endif %} {{ reverse }}</span>
+
+      {% endfor %}
+
+
+    </div>
+  </div>
+</section>
+
+
 <!--==========================
       Team Section
     ============================-->
-<section id="team">
-  <div class="container">
-    <div class="section-header wow fadeInUp">
-      <h3>Team</h3>
-      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
-    </div>
 
-    <div class="row">
-
-      <div class="col-lg-3 col-md-6 wow fadeInUp">
-        <div class="member">
-          <img src="assets/img/team-1.jpg" class="img-fluid" alt="">
-          <div class="member-info">
-            <div class="member-info-content">
-              <h4>Walter White</h4>
-              <span>Chief Executive Officer</span>
-              <div class="social">
-                <a href="">
-                  <i class="fa fa-twitter"></i>
-                </a>
-                <a href="">
-                  <i class="fa fa-facebook"></i>
-                </a>
-                <a href="">
-                  <i class="fa fa-google-plus"></i>
-                </a>
-                <a href="">
-                  <i class="fa fa-linkedin"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="member">
-          <img src="assets/img/team-2.jpg" class="img-fluid" alt="">
-          <div class="member-info">
-            <div class="member-info-content">
-              <h4>Sarah Jhonson</h4>
-              <span>Product Manager</span>
-              <div class="social">
-                <a href="">
-                  <i class="fa fa-twitter"></i>
-                </a>
-                <a href="">
-                  <i class="fa fa-facebook"></i>
-                </a>
-                <a href="">
-                  <i class="fa fa-google-plus"></i>
-                </a>
-                <a href="">
-                  <i class="fa fa-linkedin"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-        <div class="member">
-          <img src="assets/img/team-3.jpg" class="img-fluid" alt="">
-          <div class="member-info">
-            <div class="member-info-content">
-              <h4>William Anderson</h4>
-              <span>CTO</span>
-              <div class="social">
-                <a href="">
-                  <i class="fa fa-twitter"></i>
-                </a>
-                <a href="">
-                  <i class="fa fa-facebook"></i>
-                </a>
-                <a href="">
-                  <i class="fa fa-google-plus"></i>
-                </a>
-                <a href="">
-                  <i class="fa fa-linkedin"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-        <div class="member">
-          <img src="assets/img/team-4.jpg" class="img-fluid" alt="">
-          <div class="member-info">
-            <div class="member-info-content">
-              <h4>Amanda Jepson</h4>
-              <span>Accountant</span>
-              <div class="social">
-                <a href="">
-                  <i class="fa fa-twitter"></i>
-                </a>
-                <a href="">
-                  <i class="fa fa-facebook"></i>
-                </a>
-                <a href="">
-                  <i class="fa fa-google-plus"></i>
-                </a>
-                <a href="">
-                  <i class="fa fa-linkedin"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-</section>
 <!-- #team -->
