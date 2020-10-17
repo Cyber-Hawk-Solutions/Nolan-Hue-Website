@@ -4,11 +4,11 @@ subheader: "It Takes a Village. "
 link: /events
 events:
   - title: Revolution of Art
-    thumbnail: /assets/uploads/roa.jpg
+    thumbnail_image: /assets/uploads/roa.jpg
   - title: Youth Empowerment Retreat
-    thumbnail: /assets/uploads/yer.jpg
+    thumbnail_image: /assets/uploads/yer.jpg
   - title: Networking Event
-    thumbnail: /assets/uploads/ne.jpg
+    thumbnail_image: /assets/uploads/ne.jpg
 footer: Raise The Standard <br /> Raise it
 footer-link-text: Boldly
 footer-link: /events

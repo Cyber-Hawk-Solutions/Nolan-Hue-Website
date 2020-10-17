@@ -1,6 +1,6 @@
 ---
-banner: /assets/uploads/ne.jpg
-banner2: assets/images/events/ne2.jpg
+banner_image: /assets/uploads/ne.jpg
+banner2_image: assets/images/events/ne2.jpg
 name: Young Professional Networking Event
 subtitle: Connecting People
 description: Nolan Hue’s Young Professional Networking Event is a nifty

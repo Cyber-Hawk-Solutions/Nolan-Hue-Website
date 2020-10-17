@@ -1,6 +1,6 @@
 ---
-banner: /assets/uploads/revolution-of-art-2018-3.jpg
-banner2: assets/images/events/ne2.jpg
+banner_image: /assets/uploads/revolution-of-art-2018-3.jpg
+banner2_image: assets/images/events/ne2.jpg
 name: Revolution of Art
 subtitle: Supporting the Arts
 description: "Revolve around captivating local art pieces created with amazing
