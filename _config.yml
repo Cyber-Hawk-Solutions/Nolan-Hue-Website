@@ -56,8 +56,7 @@ collections:
     output: true
   sections:
     output: false
-  pageContents:
-    output: false
+
 
 
 uploads_dir: "assets/uploads"
