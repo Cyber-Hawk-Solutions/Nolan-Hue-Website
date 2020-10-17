@@ -3,7 +3,9 @@ page: about
 layout: single-page
 title: What is NolanHue?
 subtitle: Get to know us
-banner_image: "/uploads/nh-branding.jpg"
+first_about_image: "assets/uploads/ne.jpg"
+second_about_image: "assets/images/alumni/1.jpg"
+banner_image: "assets/uploads/nh-branding.jpg"
 slug: about
 paragraph: Nolan Hue is a social enterprise that cultivates professional development in youth through its initiatives such as the Youth Empowerment Retreat and Networking Event - both of which has been taking place annually for over 5 years.
 
@@ -11,11 +13,11 @@ team:
   - name: Nolan Hue
     position: Position
     bio: wiefnw wdeniwden h ekjf erf erf eienrfienrf eijnwiendiwend wjwndjednje 2020ei2jei2judnwend
-    picture: /uploads/ne.jpg
+    picture: assets/uploads/ne.jpg
   - name: Nolan Hue
     position: Position
     bio: wiefnw wdeniwden h ekjf erf erf eienrfienrf eijnwiendiwend wjwndjednje 2020ei2jei2judnwend
-    picture: /uploads/ne.jpg
+    picture: assets/uploads/ne.jpg
 
    
 ---
@@ -41,10 +43,10 @@ team:
           <div class="">
 
             <div class="about-img position-relative d-none d-md-block" style="min-height: 295px;">
-              <div class="my-3 my-lg-0"><div class="gradient-bg wow animated fadeInUp delay-1-7s"><img src="{{'/uploads/ne.jpg' | relative_url }}" alt="About Image"></div></div>
-              <div data-0="top: 120px" data-end="top: 80px"><div class="gradient-bg wow animated fadeInUp delay-2s"><img style="height: 33vh;" src="{{'assets/images/alumni/1.jpg' | relative_url}}" alt="About Image" style="object-fit: cover;"></div></div>
+              <div class="my-3 my-lg-0"><div class="gradient-bg wow animated fadeInUp delay-1-7s"><img src="{{ page.first_about_image | relative_url }}" alt="About Image"></div></div>
+              <div data-0="top: 120px" data-end="top: 80px"><div class="gradient-bg wow animated fadeInUp delay-2s"><img style="height: 33vh;" src="{{page.second_about_image | relative_url}}" alt="About Image" style="object-fit: cover;"></div></div>
             </div>
-            <img class="d-none d-sm-block d-md-none animated fadeInUp delay-1s" src="{{'/uploads/ne.jpg' | relative_url }}" alt="About Image">
+            <img class="d-none d-sm-block d-md-none animated fadeInUp delay-1s" src="{{ page.first_about_image | relative_url }}" alt="About Image">
 
           </div>
         </div>
