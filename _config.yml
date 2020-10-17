@@ -57,6 +57,8 @@ collections:
   pageContents:
     output: false
 
+uploads_dir: "assets/uploads"
+
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
