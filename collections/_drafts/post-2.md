@@ -1,0 +1,17 @@
+---
+layout: post
+title: Post 2
+subtitle: Subtitle
+banner_image: /assets/images/1.jpg
+date: 2020-10-15 00:00:00
+author: siendhsdn
+tags:
+  - indn
+  - gg
+---
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas velit nibh, sed vulputate magna blandit sit amet. In quis euismod ipsum, vitae finibus quam. Cras placerat eu enim et eleifend. Phasellus volutpat pulvinar odio non tempus. Pellentesque eget pharetra purus, vel feugiat tortor.
+
+![](/assets/images/alumni/3.jpg){: width="960" height="641"}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas velit nibh, sed vulputate magna blandit sit amet. In quis euismod ipsum, vitae finibus quam. Cras placerat eu enim et eleifend. Phasellus volutpat pulvinar odio non tempus. Pellentesque eget pharetra purus, vel feugiat tortor.
