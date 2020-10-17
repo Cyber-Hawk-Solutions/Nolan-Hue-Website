@@ -22,9 +22,9 @@ subtitle: Subtitle
 				<!-- Entry Meta
 								============================================= -->
 				<ul class="entry-meta clearfix text-left">
-					<li><i class="icon-calendar3"></i> {{page.date}}</li>
-					<li><a href="#"><i class="icon-user"></i> {{ page.author }}</a></li>
-					<li><i class="icon-folder-open"></i> <a href="#">{{page.tags }}</a></li>
+					<li><i class="icon-calendar3"></i> {{page.date | date_to_string: "ordinal", "US"}}</li>
+					<li><i class="icon-user"></i> {{ page.author }}</li>
+					{% if page.tags %}<li><i class="icon-folder-open"></i> {{page.tags | array_to_sentence_string }}</li>{% endif %}
 
 				</ul><!-- .entry-meta end -->
 
