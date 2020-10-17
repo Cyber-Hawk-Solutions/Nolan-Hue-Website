@@ -1,5 +1,5 @@
 ---
-banner: /assets/uploads/ne.jpg
+banner: /uploads/ne.jpg
 banner2: assets/images/events/ne2.jpg
 name: Young Professional Networking Event
 subtitle: Connecting People

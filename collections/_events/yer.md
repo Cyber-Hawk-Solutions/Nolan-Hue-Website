@@ -1,6 +1,6 @@
 ---
-banner: /assets/uploads/yer.jpg
-banner2: assets/images/events/yer2.jpg
+banner: /uploads/yer.jpg
+banner2: /uploads/events/yer2.jpg
 name: Youth Empowerment Retreat
 subtitle: Preparing Youth
 description: The name Youth Empowerment Retreat elucidates the main objective of
