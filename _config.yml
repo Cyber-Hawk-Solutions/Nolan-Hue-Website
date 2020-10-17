@@ -50,14 +50,15 @@ plugins:
 collections_dir: collections
 
 collections:
+  posts:
+    output: true
   events:
     output: true
   sections:
     output: false
   pageContents:
     output: false
-  posts:
-    output: true
+
 
 uploads_dir: "assets/uploads"
 
