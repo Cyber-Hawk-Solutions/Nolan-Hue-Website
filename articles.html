@@ -1,0 +1,41 @@
+---
+layout: single-page
+title: Articles
+---
+
+
+<div class="background-grey">
+  <div class="row container-fluid py-5">
+
+    {% for post in site.posts %}
+    <div class="col-12 col-lg-6 ">
+      <div class="story py-5 story-list clearfix row">
+        <div class="story-image col-6 ">
+          <div class="img-container">
+            <img src="{{post.banner_image}}" alt="Nix Maxwell">
+          </div>
+        </div>
+        <div class="d-flex align-self-center flex-column story-desc col-6 ">
+          <div class="story-title ">
+            <h4 class="text-light ">{{ post.title }}</h4>
+
+            <span class="text-light d-block ">by {{ post.author }}</span>
+            <span class="text-light ">{{ post.date | date_to_string: "ordinal", "US"}}</span>
+
+          </div>
+          <div class="story-content exerpt-line-clamp">
+            {{ post.excerpt }}
+
+
+            <a id="hero-button1" href="{{ post.url }}"
+              class="button button-border button-white button-light button-rounded capitalize notopmargin"><span>Read
+                more</span></a><br class="d-block d-sm-none">
+          </div>
+
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+
+  </div>
+</div>

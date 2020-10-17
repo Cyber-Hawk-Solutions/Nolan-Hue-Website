@@ -7,35 +7,31 @@
 
       {% assign i = 1 %}
       {% assign reverse = false %}
-      {% for team in page.team %}
+      {% for person in page.team %}
 
       <div class="team py-5 team-list clearfix row {% if reverse == true %} d-flex flex-row-reverse {% endif %}">
         <div class="team-image col-6 col-lg-4">
           <div class="img-container">
-            <img src="{{ team.picture | relative_url}}" alt="Nix Maxwell">
+            <img src="{{ person.picture | relative_url}}" alt="Nix Maxwell">
           </div>
         </div>
         <div class="d-flex align-self-center flex-column team-desc col-6 col-lg-4" >
-          <div class="team-title ">            <h4 class="text-light {% if reverse == true %} text-right {% endif %}">Nix Maxwell</h4>
-            <span class="text-light {% if reverse == true %} text-right {% endif %}">Support</span>
+          <div class="team-title ">            <h4 class="text-light {% if reverse == true %} text-right {% endif %}">{{ person.name }}</h4>
+            <span class="text-light {% if reverse == true %} text-right {% endif %}">{{ person.position }}</span>
           </div>
           <div class="team-content {% if reverse == true %} text-right {% endif %}">
-            <p class="text-light">Eradicate invest honesty human rights accessibility theory of social change. Diversity experience in the field compassion, inspire breakthroughs planned giving.</p>
+            <p class="text-light">{{ person.bio }}</p>
           </div>
 
           <div class="mt-4 {% if reverse == true %} d-flex flex-row-reverse {% endif %}">
-            <a href="#" class="social-icon si-rounded si-small si-forrst text-light">
-              <i class="icon-forrst"></i>
-              <i class="icon-forrst"></i>
+            <a href="#" class="social-icon si-rounded si-small si-linkedin text-light">
+              <i class="icon-linkedin"></i>
+              <i class="icon-linkedin"></i>
             </a>
-            <a href="#" class="social-icon si-rounded si-small si-skype text-light">
-              <i class="icon-skype"></i>
-              <i class="icon-skype"></i>
-            </a>
-            <a href="#" class="social-icon si-rounded si-small si-flickr text-light">
-              <i class="icon-flickr"></i>
-              <i class="icon-flickr"></i>
-            </a>          
+            <a href="#" class="social-icon si-rounded si-small si-gmail text-light">
+              <i class="icon-gmail"></i>
+              <i class="icon-gmail"></i>
+            </a>       
           </div>
 
         </div>
