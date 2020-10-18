@@ -956,3 +956,7 @@ body, html {
 .alt-font {
 	font-family: Montserrat !important;
 }
+
+.postcontent .entry img {
+	height: auto;
+}
