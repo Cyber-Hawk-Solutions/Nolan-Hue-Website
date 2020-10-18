@@ -422,10 +422,12 @@ z-index: 2;
 .team-image > a, .team-image img {
 	object-fit: cover;
 	display: block;
-	width:  calc((90vw - 60px)/24*12);
+	width:  calc((90vw - 60px)/24*9);
 	height: 100%;
 	transform: translateX(0px);
 	max-width: none;
+	min-width: 128%;
+	
 }
 
 .team-title {
