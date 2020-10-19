@@ -54,8 +54,11 @@ collections:
     output: true
   events:
     output: true
+    _hide_content: true
   sections:
     output: false
+    _hide_content: true
+
 
 
 
