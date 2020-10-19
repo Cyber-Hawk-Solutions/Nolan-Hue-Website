@@ -53,7 +53,7 @@ collections:
   posts:
     output: true
   events:
-    output: true
+    output: false
     _hide_content: true
   sections:
     output: false
