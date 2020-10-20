@@ -1,4 +1,5 @@
 ---
+_title: Home
 heading: Fostering Professional </br>Development <span><em>Opportunities</em></span>.
 image: assets/uploads/nh-branding.jpg
 buttons:

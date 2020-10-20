@@ -7,8 +7,7 @@
 <!-- Slider
 ============================================= -->
 
-{% assign events = site.sections | where: "title", "Events" | first %}
-
+{% assign events = site.sections | where: "_title", "Events" | first %}
 
 <section id="slider" class="slider-element revslider-wrap bg-light clearfix" style="width: 100vw;">
 
