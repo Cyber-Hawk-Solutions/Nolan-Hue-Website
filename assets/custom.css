@@ -680,6 +680,11 @@ body, #wrapper, .css3-spinner, #header.dark.sticky-header.transparent-header #he
 	animation-delay: 0.75s;
 }
 
+.animated.delay-1-2s {
+  -webkit-animation-delay: 1.25s;
+	animation-delay: 1.25s;
+}
+
 .animated.delay-1-5s {
   -webkit-animation-delay: 1.5s;
 	animation-delay: 1.5s;

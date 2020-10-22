@@ -11,27 +11,24 @@
 
       <div class="team py-5 team-list clearfix row {% if reverse == true %} d-flex flex-row-reverse {% endif %}">
         <div class="team-image col-6 col-lg-4">
-          <div class="img-container">
-            <img src="{{ person.image | relative_url}}" alt="Nix Maxwell" class="scroll-team-img">
+          <div class="img-container wow animated fadeInLeftBig delay-1s">
+            <img src="{{ person.image | relative_url}}" alt="Nix Maxwell" class="scroll-team-img ">
           </div>
         </div>
         <div class="d-flex align-self-center flex-column team-desc col-6 col-lg-4" >
-          <div class="team-title ">            <h4 class="text-light {% if reverse == true %} text-right {% endif %}">{{ person.name }}</h4>
-            <span class="text-light {% if reverse == true %} text-right {% endif %}">{{ person.position }}</span>
+          <div class="team-title ">            <h4 class="text-light wow animated fadeInUp delay-0-2s {% if reverse == true %} text-right {% endif %}">{{ person.name }}</h4>
+            <span class="text-light wow animated fadeInUp delay-1s {% if reverse == true %} text-right {% endif %}">{{ person.position }}</span>
           </div>
           <div class="team-content {% if reverse == true %} text-right {% endif %}">
-            <p class="text-light">{{ person.bio }}</p>
+            <p class="text-light wow animated fadeInUp delay-1-5s ">{{ person.bio }}</p>
           </div>
 
           <div class="mt-4 {% if reverse == true %} d-flex flex-row-reverse {% endif %}">
-            <a href="#" class="social-icon si-rounded si-small si-linkedin text-light">
+            <a href="{{ person.linkedIn}}" class="wow animated fadeInLeft delay-1-7s  social-icon si-rounded si-small si-linkedin text-light">
               <i class="icon-linkedin"></i>
               <i class="icon-linkedin"></i>
             </a>
-            <a href="#" class="social-icon si-rounded si-small si-gmail text-light">
-              <i class="icon-gmail"></i>
-              <i class="icon-gmail"></i>
-            </a>       
+      
           </div>
 
         </div>
