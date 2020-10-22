@@ -1,5 +1,7 @@
 ---
 title: About
+first_about_image: "assets/uploads/ne.jpg"
+second_about_image: "assets/images/alumni/1.jpg"
 values:
   - Professional Development
   - Empowerment

@@ -1,0 +1,42 @@
+---
+layout: default
+title: Title
+---
+
+
+
+<div class="section section-about m-0 py-5 background-grey text-light" style="    min-height: 80vh;">
+
+
+	<!-- Post Content
+					============================================= -->
+	<div class="container my-5 clearfix">
+
+		<div class=" postcontent single-post nobottommargin">
+
+			<!-- Single Post
+							============================================= -->
+			<div class="entry clearfix">
+
+				<!-- Entry Meta
+								============================================= -->
+				<ul class="entry-meta clearfix text-left">
+					<li><i class="icon-calendar3"></i> {{page.date | date_to_string: "ordinal", "US"}}</li>
+					<li><i class="icon-user"></i> {{ page.author }}</li>
+					{% if page.tags %}<li><i class="icon-folder-open"></i> {{page.tags | array_to_sentence_string }}</li>{% endif %}
+
+				</ul><!-- .entry-meta end -->
+
+				<!-- Entry Content
+								============================================= -->
+				<div class="entry-content notopmargin">
+					{{ content }}
+
+				</div>
+
+			</div><!-- .postcontent end -->
+
+
+		</div>
+	</div>
+</div>

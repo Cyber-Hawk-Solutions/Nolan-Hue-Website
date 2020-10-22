@@ -285,6 +285,23 @@
 						.addTo(controller)
 				});
 
+				$(".scroll-team-img").each(function (i) {
+					let thisLine = $(this);
+
+					let action = gsap.timeline()
+						.fromTo(thisLine, { x: '-25%' }, { x: '26%', duration: window.innerWidth / 4, })
+					titles.push(action)
+
+					new ScrollMagic.Scene({
+						triggerElement: this,
+						duration: 8000,
+						triggerHook: 1
+					})
+						.setTween(action)
+						// .addIndicators()
+						.addTo(controller)
+				});
+
 				setTimeout(() => {
 
 

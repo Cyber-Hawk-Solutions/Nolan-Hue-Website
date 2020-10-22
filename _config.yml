@@ -31,6 +31,7 @@ theme-color: "#444"
 markdown: kramdown
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
 
 
 # SEO Related
@@ -50,12 +51,19 @@ plugins:
 collections_dir: collections
 
 collections:
-  events:
+  posts:
     output: true
+  events:
+    output: false
+    _hide_content: true
   sections:
     output: false
-  pages:
-    output: false
+    _hide_content: true
+
+
+
+
+uploads_dir: "assets/uploads"
 
 
 # Exclude from processing.
