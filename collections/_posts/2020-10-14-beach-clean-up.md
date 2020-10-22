@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Title
+title: Beach Clean Up
 banner_image: /assets/uploads/whatsapp-image-2020-10-10-at-9-46-38-am-2.jpeg
-date: 2020-10-15 00:00:00
+date: 2020-10-14 00:00:00
 author: Admin
 tags:
   - Alumni

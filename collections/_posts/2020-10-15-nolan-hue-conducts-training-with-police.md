@@ -3,10 +3,9 @@ layout: post
 title: Nolan Hue Conducts Training with Police
 banner_image: /assets/uploads/picture4-1.jpg
 date: 2020-10-15 00:00:00
-author: siendhsdn
+author: Admin
 tags:
-  - indn
-  - gg
+  - Training
 ---
 
 On July 23rd 2020, the Nolan Hue foundation conducted a professional development & Customer service training to the Criminal Investigations Department (new recruits). Twenty of the officers were in attendance and all Covid -19 protocols was observed. The training was facilitated by Nolan Hue Chairman, Regis Burton, Nolan Hue Board of Directors Lyle Jackson, and Nolan Hue CEO Alisha Francis.
