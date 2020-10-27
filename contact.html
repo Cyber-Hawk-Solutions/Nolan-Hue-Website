@@ -1,7 +1,11 @@
 ---
 layout: single-page
 title: Contact
-subtitle: Get in touch with us
+info:
+  title: Let's have a talk
+  phone: +1268-23e32e32
+  email: nolanhue@gmail.com 
+  address: Light Foot, Antigua. W.I
 ---
 
 <div id="contact" class="background-grey m-0 contact-area">
@@ -11,7 +15,7 @@ subtitle: Get in touch with us
       <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12 my-5 mt-5">
           <div class="section-headline text-center ">
-            <h2 class="text-light">Let's have a talk</h2>
+            <h2 class="text-light">{{ page.info.title }}</h2>
           </div>
         </div>
       </div>
@@ -22,7 +26,7 @@ subtitle: Get in touch with us
             <div class="single-icon">
               <i class="fa fa-mobile"></i>
               <p>
-                Call: {{ site.phone }} 
+                Call: {{ page.info.phone }} 
               </p>
             </div>
           </div>
@@ -33,7 +37,7 @@ subtitle: Get in touch with us
             <div class="single-icon">
               <i class="fa fa-envelope-o"></i>
               <p>
-                Email: {{site.email}}<br>
+                Email: {{page.info.email}}<br>
               </p>
             </div>
           </div>
@@ -44,8 +48,7 @@ subtitle: Get in touch with us
             <div class="single-icon">
               <i class="fa fa-map-marker"></i>
               <p>
-                Location: {{site.address}}<br>
-                <span>St.Johns, Antigua</span>
+                Location: {{page.info.address}}<br>
               </p>
             </div>
           </div>
