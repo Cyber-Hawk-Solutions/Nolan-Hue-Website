@@ -28,15 +28,15 @@ gallery:
   <div class="row  container-fluid pb-5 ">
 
     <div class="row col-12 m-4">
-      <button type="button" class="btn btn-link text-light">Events:</button>
-      <div class="btn-toolbar pr-3" role="toolbar" aria-label="Toolbar with button groups">
+      <button type="button" class="btn btn-link text-light  mt-3">Events:</button>
+      <div class="btn-toolbar pr-3 mt-3" role="toolbar" aria-label="Toolbar with button groups">
         <div class="btn-group mr-2 filters" role="group" aria-label="First group">
 
             {% assign filters = page.gallery | group_by:"event" %}
-            <button type="button" data-filter-group="event" class="btn btn-secondary pt-3"><a href="#"  data-filter="*">All  <span class="badge badge-light badge-dark badge-pill">{{page.gallery | size}}</span> </a></button>
+            <button type="button" data-filter-group="event" class="btn btn-secondary"><a href="#"  data-filter="*">All  <span class="badge badge-light badge-dark badge-pill">{{page.gallery | size}}</span> </a></button>
 
             {% for filter in filters %}
-            <button type="button" data-filter-group="event" class="btn btn-secondary pt-3"><a href="#"  data-filter=".{{ filter.name }}"><i class="mdi mdi-chevron-right"></i> {{ filter.name }}  <span class="badge badge-light badge-dark badge-pill">{{filter.items | size}}</span></a></button>
+            <button type="button" data-filter-group="event" class="btn btn-secondary "><a href="#"  data-filter=".{{ filter.name }}"><i class="mdi mdi-chevron-right"></i> {{ filter.name }}  <span class="badge badge-light badge-dark badge-pill">{{filter.items | size}}</span></a></button>
 
             {% endfor %}
 
@@ -44,15 +44,15 @@ gallery:
         </div>
       </div>
 
-      <button type="button" class="btn btn-link text-light ">Year:</button>
-      <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-        <div class="btn-group mr-2 filters" role="group" aria-label="First group">
+      <button type="button" class="btn btn-link text-light  mt-3">Year:</button>
+      <div class="btn-toolbar mt-3" role="toolbar" aria-label="Toolbar with button groups">
+        <div class="btn-group mr-2 filters " role="group" aria-label="First group">
 
             {% assign filters = page.gallery | group_by:"year" %}
-            <button type="button" data-filter-group="year" class="btn btn-secondary pt-3"><a href="#"  data-filter="*">All  <span class="badge badge-light badge-dark badge-pill">{{page.gallery | size}}</span> </a></button>
+            <button type="button" data-filter-group="year" class="btn btn-secondary "><a href="#"  data-filter="*">All  <span class="badge badge-light badge-dark badge-pill">{{page.gallery | size}}</span> </a></button>
 
             {% for filter in filters %}
-            <button type="button" data-filter-group="year" class="btn btn-secondary pt-3"><a href="#"  data-filter=".{{ filter.name }}"><i class="mdi mdi-chevron-right"></i> {{ filter.name }}  <span class="badge badge-light badge-dark badge-pill">{{filter.items | size}}</span></a></button>
+            <button type="button" data-filter-group="year" class="btn btn-secondary "><a href="#"  data-filter=".{{ filter.name }}"><i class="mdi mdi-chevron-right"></i> {{ filter.name }}  <span class="badge badge-light badge-dark badge-pill">{{filter.items | size}}</span></a></button>
 
             {% endfor %}
       
