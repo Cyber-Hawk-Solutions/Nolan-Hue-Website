@@ -123,7 +123,9 @@
 				tl.from('#hero-button1', { opacity: 0, duration: 0.5, ease: "power2.out" }, "<0")
 				tl.from('#hero-title', { opacity: 0, y: +100, duration: 0.5, ease: "power1.out" }, "<0.3")
 				tl.from('#header-wrap', { width: 0, duration: 0.5, ease: "power2.out" })
-			} else {
+			}
+				
+			 else {
 
 				console.log("PAGE INNER")
 				tl.to(['#left-swipe', '#right-swipe'], { width: 0, duration: 0.5, ease: "power2.out" }, "<0")
@@ -137,6 +139,13 @@
 						$('.text-blend strong').css('opacity', '0')
 					}
 				}, "<0")
+
+				if (window.location.pathname == "/gallery" || window.location.pathname == "gallery") {
+					console.log("PAGE GALLERY")
+
+					filterInit()
+				}		
+
 			}
 
 
@@ -166,6 +175,89 @@
 			// 	});
 			// {% endfor %}
 		}; /* END OF ON LOAD FUNCTION */
+
+		function filterInit() {
+						
+			// $('.search').click((e) => {
+			//   e.preventDefault()
+			//   let target = document.querySelector('.section-padding');
+			//   locoScroll.scrollTo(target)
+			// })
+
+			// external js: isotope.pkgd.js
+
+			// store filter for each group
+			var buttonFilters = {};
+			var buttonFilter;
+			// quick search regex
+			var qsRegex;
+
+			// init Isotope
+			var $grid = $('.grid').isotope({
+				itemSelector: '.gallery-image',
+				filter: "*",
+				percentPosition: true,
+				masonry: {
+					// use element for option
+					columnWidth: '.gallery-image'
+				}
+			});
+
+			$('.filters').on('click', 'a', function (e) {
+
+				e.preventDefault()
+				var $this = $(this);
+				// get group key
+				var $buttonGroup = $this.parents('.button-group');
+				var filterGroup = $buttonGroup.attr('data-filter-group');
+				// set filter for group
+				buttonFilters[filterGroup] = $this.attr('data-filter');
+				// combine filters
+				buttonFilter = concatValues(buttonFilters);
+				// Isotope arrange
+				$grid.isotope({ filter: buttonFilter });
+			});
+
+			// use value of search field to filter
+			var $quicksearch = $('.quicksearch').keyup(debounce(function () {
+				qsRegex = new RegExp($quicksearch.val(), 'gi');
+				$grid.isotope();
+			}));
+
+			// change is-checked class on buttons
+			$('.button-group').each(function (i, buttonGroup) {
+				var $buttonGroup = $(buttonGroup);
+				$buttonGroup.on('click', 'button', function () {
+				$buttonGroup.find('.is-checked').removeClass('is-checked');
+				$(this).addClass('is-checked');
+				});
+			});
+
+			// flatten object by concatting values
+			function concatValues(obj) {
+				var value = '';
+				for (var prop in obj) {
+				value += obj[prop];
+				}
+				return value;
+			}
+
+			// debounce so filtering doesn't happen every millisecond
+			function debounce(fn, threshold) {
+				var timeout;
+				threshold = threshold || 100;
+				return function debounced() {
+				clearTimeout(timeout);
+				var args = arguments;
+				var _this = this;
+				function delayed() {
+					fn.apply(_this, args);
+				}
+				timeout = setTimeout(delayed, threshold);
+				};
+			}
+
+		}
 
 		function particles() {
 
