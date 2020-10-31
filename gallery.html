@@ -6,23 +6,23 @@ gallery:
   - image: /assets/uploads/networking-event-92.jpg
     caption:
     event: Networking-Event
-    year: 2019
+    year: '2019'
   - image: /assets/uploads/networking-event-64.jpg
     caption:
-    event:
-    year: 2019
+    event: Networking-Event
+    year: '2019'
   - image: /assets/uploads/networking-event-31.jpg
     caption:
-    event:
-    year: 2018
+    event: Networking-Event
+    year: '2018'
   - image: /assets/uploads/networking-event-5.jpg
     caption:
     event: Networking-Event
-    year: 2019
+    year: '2019'
   - image: /assets/uploads/networking-event-11.jpg
     caption:
-    event:
-    year:
+    event: Networking-Event
+    year: '2019'
   - image: /assets/uploads/tnw-event-67-.jpg
     caption:
     event: Networking-Event
@@ -122,7 +122,7 @@ gallery:
   - image: /assets/uploads/yer-alumni-clean-up-project-2017-18---1-1.jpg
     caption:
     event: Other
-    year: 2017/2018
+    year: '2017'
   - image: /assets/uploads/2019-alumni-clean-up.jpg
     caption:
     event: Other
@@ -134,32 +134,35 @@ gallery:
 
   <div class="row  container-fluid pb-5 ">
 
-    <div class="row col-12 m-4">
+    <div class="row col-12 mt-4 mx-4">
       <button type="button" class="btn btn-link text-light  mt-3">Events:</button>
       <div class="btn-toolbar pr-3 mt-3" role="toolbar" aria-label="Toolbar with button groups">
-        <div class="btn-group mr-2 filters" role="group" aria-label="First group">
+        <div class="btn-group flex-wrap mr-2 filters" role="group" aria-label="First group"  data-filter-group="event" >
 
             {% assign filters = page.gallery | group_by:"event" %}
-            <button type="button" data-filter-group="event" class="btn btn-secondary"><a href="#"  data-filter="*">All  <span class="badge badge-light badge-dark badge-pill">{{page.gallery | size}}</span> </a></button>
+            <button type="button" class="btn btn-secondary" data-filter="*"><span>All  <span class="badge badge-light badge-dark badge-pill">{{page.gallery | size}}</span> </span></button>
 
             {% for filter in filters %}
-            <button type="button" data-filter-group="event" class="btn btn-secondary "><a href="#"  data-filter=".{{ filter.name }}"><i class="mdi mdi-chevron-right"></i> {{ filter.name }}  <span class="badge badge-light badge-dark badge-pill">{{filter.items | size}}</span></a></button>
+            <button type="button"  class="btn btn-secondary " data-filter=".{{ filter.name }}"><span  ><i class="mdi mdi-chevron-right"></i> {{ filter.name }}  <span class="badge badge-light badge-dark badge-pill">{{filter.items | size}}</span></span></button>
 
             {% endfor %}
 
       
         </div>
       </div>
+    </div>
+
+    <div class="row col-12 mb-4 mx-4">
 
       <button type="button" class="btn btn-link text-light  mt-3">Year:</button>
       <div class="btn-toolbar mt-3" role="toolbar" aria-label="Toolbar with button groups">
-        <div class="btn-group mr-2 filters " role="group" aria-label="First group">
+        <div class="btn-group flex-wrap mr-2 filters " role="group" aria-label="First group">
 
             {% assign filters = page.gallery | group_by:"year" %}
-            <button type="button" data-filter-group="year" class="btn btn-secondary "><a href="#"  data-filter="*">All  <span class="badge badge-light badge-dark badge-pill">{{page.gallery | size}}</span> </a></button>
+            <button type="button" data-filter-group="year" class="btn btn-secondary " data-filter="*"><span href="#"  >All  <span class="badge badge-light badge-dark badge-pill">{{page.gallery | size}}</span> </span></button>
 
             {% for filter in filters %}
-            <button type="button" data-filter-group="year" class="btn btn-secondary "><a href="#"  data-filter=".{{ filter.name }}"><i class="mdi mdi-chevron-right"></i> {{ filter.name }}  <span class="badge badge-light badge-dark badge-pill">{{filter.items | size}}</span></a></button>
+            <button type="button" data-filter-group="year" class="btn btn-secondary " data-filter=".{{ filter.name }}" ><span href="#"  ><i class="mdi mdi-chevron-right"></i> {{ filter.name }}  <span class="badge badge-light badge-dark badge-pill">{{filter.items | size}}</span></span></button>
 
             {% endfor %}
       
@@ -172,7 +175,7 @@ gallery:
       {% for image in page.gallery %}
       <div class="col-12 col-md-6 col-lg-3 px-5 m-0 gallery-image {{image.event}} {{image.year}}" style=" position: relative; display: inline-block;">
         <div class="story py-5 story-list clearfix row" style="height: auto;">
-          <div class="story-image wow animated fadeInRight delay-0-5s " style=" position: relative;">
+          <div class="story-image animated fadeInRight delay-0-5s " style=" position: relative;">
             <div class="img-container">
               <img class="wow animated fadeInLeft delay-1s" src="{{image.image}}" alt="Nix Maxwell">
             </div>
