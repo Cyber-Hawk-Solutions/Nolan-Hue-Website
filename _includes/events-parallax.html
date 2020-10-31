@@ -2,7 +2,8 @@
 
 {% assign i = 1 %}
 {% assign reverse = false %}
-{% for event in site.events %}
+{% assign filteredEvents = site.events | where: 'hidden', false %}
+{% for event in filteredEvents %}
   <article class="portfolio-item pf-media pf-icons row" {% if reverse %} style="flex-direction: row-reverse;"  {% endif %}>
     <span style="display: none;">{% if reverse == true %} {% assign reverse = false %} {% elsif reverse == false %} {% assign reverse = true %} {% endif %} {{ reverse }}</span>
     <div class="col-md-12 col-lg-6 d-flex" style="background-color: {% cycle "bg1": "#444", "#ffc013", "#dc3545" %}; justify-content: center; align-items: center; flex-flow: column; padding: 8vw!important">
