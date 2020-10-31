@@ -967,5 +967,9 @@ body, html {
 }
 
 .gallery-image {
-    float: left;
+	float: left;
+}
+
+.fancybox-content {
+	background: #212529 !important;
 }

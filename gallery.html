@@ -158,7 +158,7 @@ gallery:
       <div class="btn-toolbar mt-3" role="toolbar" aria-label="Toolbar with button groups">
         <div class="btn-group flex-wrap mr-2 filters " role="group" aria-label="First group">
 
-            {% assign filters = page.gallery | group_by:"year" %}
+            {% assign filters = page.gallery | sort: "year" | group_by:"year"  %}
             <button type="button" data-filter-group="year" class="btn btn-secondary " data-filter="*"><span href="#"  >All  <span class="badge badge-light badge-dark badge-pill">{{page.gallery | size}}</span> </span></button>
 
             {% for filter in filters %}
@@ -173,11 +173,12 @@ gallery:
 
     <div class="row grid col-12 m-0 p-0">
       {% for image in page.gallery %}
+
       <div class="col-12 col-md-6 col-lg-3 px-5 m-0 gallery-image {{image.event}} {{image.year}}" style=" position: relative; display: inline-block;">
         <div class="story py-5 story-list clearfix row" style="height: auto;">
           <div class="story-image animated fadeInRight delay-0-5s " style=" position: relative;">
-            <div class="img-container">
-              <img class="wow animated fadeInLeft delay-1s" src="{{image.image}}" alt="Nix Maxwell">
+            <div class="img-container" data-src="{{image.image}}" data-fancybox="{{image.event}}-{{image.year}}" data-caption="{{image.caption}}">
+              <img class=" animated fadeInLeft" src="{{image.image}}">
             </div>
             <h4 class="text-light text-center wow animated fadeInUp delay-1-2s ">{{ image.caption }}</h4>
           </div>
