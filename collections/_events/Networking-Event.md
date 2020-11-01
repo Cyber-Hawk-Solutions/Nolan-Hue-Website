@@ -8,4 +8,5 @@ description: >-
   event to entertain enticing, professional conversions and expand your network.
   This aids in Nolan Hue’s goal of advocating professional development.
 shortName: ne
+hidden: false
 ---

@@ -9,4 +9,6 @@ description: >-
   Barbuda, focuses on fostering growth and uncloaking the talent of local
   artists.
 shortName: roa
+hidden: false
+
 ---

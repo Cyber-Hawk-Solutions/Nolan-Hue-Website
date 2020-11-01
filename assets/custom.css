@@ -862,13 +862,13 @@ body, html {
 
 @media (min-width: 991px) {
 	.story.story-list .story-image {
-		height: calc((100vw - 80px)/26*8);
+		height: calc((100vw - 80px)/24*6);
 		
 	}
 
-	.story {
+	/* .story {
 		height: calc((100vw - 80px)/24*9);
-	}
+	} */
 }
 
 
@@ -964,4 +964,12 @@ body, html {
 
 .postcontent .entry img {
 	height: auto;
+}
+
+.gallery-image {
+	float: left;
+}
+
+.fancybox-content {
+	background: #212529 !important;
 }

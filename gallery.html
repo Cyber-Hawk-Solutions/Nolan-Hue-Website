@@ -1,0 +1,213 @@
+---
+layout: single-page
+title: Gallery
+banner_image: assets/uploads/beach.jpg
+gallery:
+  - image: /assets/uploads/networking-event-92.jpg
+    caption:
+    event: Networking-Event
+    year: '2019'
+  - image: /assets/uploads/networking-event-64.jpg
+    caption:
+    event: Networking-Event
+    year: '2019'
+  - image: /assets/uploads/networking-event-31.jpg
+    caption:
+    event: Networking-Event
+    year: '2018'
+  - image: /assets/uploads/networking-event-5.jpg
+    caption:
+    event: Networking-Event
+    year: '2019'
+  - image: /assets/uploads/networking-event-11.jpg
+    caption:
+    event: Networking-Event
+    year: '2019'
+  - image: /assets/uploads/tnw-event-67-.jpg
+    caption:
+    event: Networking-Event
+    year: '2018'
+  - image: /assets/uploads/tnw-event-23-.jpg
+    caption:
+    event: Networking-Event
+    year: '2018'
+  - image: /assets/uploads/tnw-event-65-.jpg
+    caption:
+    event: Networking-Event
+    year: '2018'
+  - image: /assets/uploads/tnw-event-21-.jpg
+    caption:
+    event: Networking-Event
+    year: '2018'
+  - image: /assets/uploads/tnw-event-11.jpg
+    caption:
+    event: Networking-Event
+    year: '2018'
+  - image: /assets/uploads/img-8566.jpg
+    caption:
+    event: Revolution-of-Art
+    year: '2018'
+  - image: /assets/uploads/img-8565.jpg
+    caption:
+    event: Revolution-of-Art
+    year: '2018'
+  - image: /assets/uploads/92c90369-adc4-43f7-aaea-d5a49ef918e1.jpg
+    caption:
+    event: Revolution-of-Art
+    year: '2018'
+  - image: /assets/uploads/73fb3452-f140-40c0-9f3e-7f0d3f299fc6.jpg
+    caption:
+    event: Revolution-of-Art
+    year: '2018'
+  - image: /assets/uploads/61a98531-cb9d-4a0c-aea7-9e859c006300.jpg
+    caption:
+    event: Revolution-of-Art
+    year: '2018'
+  - image: /assets/uploads/yer-2019---day-2---6.jpg
+    caption:
+    event: Youth-Empowerment-Retreat
+    year: '2019'
+  - image: /assets/uploads/yer-2019---day-2---28.jpg
+    caption:
+    event: Youth-Empowerment-Retreat
+    year: '2019'
+  - image: /assets/uploads/yer-2019---day-2---22.jpg
+    caption:
+    event: Youth-Empowerment-Retreat
+    year: '2019'
+  - image: /assets/uploads/yer-2019---day-2---16.jpg
+    caption:
+    event: Youth-Empowerment-Retreat
+    year: '2019'
+  - image: /assets/uploads/yer-2019---day-2---3.jpg
+    caption:
+    event: Youth-Empowerment-Retreat
+    year: '2019'
+  - image: /assets/uploads/yer-2019---day-3---131-group-shot.jpg
+    caption:
+    event: Youth-Empowerment-Retreat
+    year: '2019'
+  - image: /assets/uploads/yer-2019---day-3---150---kes--tea-.jpg
+    caption:
+    event: Youth-Empowerment-Retreat
+    year: '2019'
+  - image: /assets/uploads/img-0178.jpg
+    caption:
+    event: Youth-Empowerment-Retreat
+    year: '2018'
+  - image: /assets/uploads/img-0187.jpg
+    caption:
+    event: Youth-Empowerment-Retreat
+    year: '2018'
+  - image: /assets/uploads/photo-2018-07-21-16-05-55-1.jpg
+    caption:
+    event: Youth-Empowerment-Retreat
+    year: '2018'
+  - image: /assets/uploads/photo-2018-07-21-16-05-55.jpg
+    caption:
+    event: Youth-Empowerment-Retreat
+    year: '2018'
+  - image: /assets/uploads/img-0377.jpg
+    caption:
+    event: Youth-Empowerment-Retreat
+    year: '2018'
+  - image: /assets/uploads/img-0181.jpg
+    caption:
+    event: Youth-Empowerment-Retreat
+    year: '2018'
+  - image: /assets/uploads/2019-blood-drive.jpg
+    caption:
+    event: Other
+    year: '2020'
+  - image: /assets/uploads/yer-alumni-clean-up-project-2017-18---1-1.jpg
+    caption:
+    event: Other
+    year: '2017'
+  - image: /assets/uploads/2019-alumni-clean-up.jpg
+    caption:
+    event: Other
+    year: '2019'
+  - image: /assets/uploads/whatsapp-image-2020-10-31-at-08-55-42.jpeg
+    caption:
+    event: Youth-Empowerment-Retreat
+    year: '2017'
+  - image: /assets/uploads/whatsapp-image-2020-10-31-at-08-55-41.jpeg
+    caption:
+    event: Youth-Empowerment-Retreat
+    year: '2017'
+  - image: /assets/uploads/whatsapp-image-2020-10-31-at-08-55-39.jpeg
+    caption:
+    event: Youth-Empowerment-Retreat
+    year: '2017'
+  - image: /assets/uploads/whatsapp-image-2020-10-31-at-08-54-53.jpeg
+    caption:
+    event: Youth-Empowerment-Retreat
+    year: '2017'
+  - image: /assets/uploads/whatsapp-image-2020-10-31-at-08-54-19.jpeg
+    caption:
+    event: Youth-Empowerment-Retreat
+    year: '2017'
+---
+
+<div class="background-grey py-5">
+
+
+  <div class="row  container-fluid pb-5 ">
+
+    <div class="row col-12 mt-4 mx-4">
+      <button type="button" class="btn btn-link text-light  mt-3">Events:</button>
+      <div class="btn-toolbar pr-3 mt-3" role="toolbar" aria-label="Toolbar with button groups">
+        <div class="btn-group flex-wrap mr-2 filters" role="group" aria-label="First group"  data-filter-group="event" >
+
+            {% assign filters = page.gallery | group_by:"event" %}
+            <button type="button" class="btn btn-secondary" data-filter="*"><span>All  <span class="badge badge-light badge-dark badge-pill">{{page.gallery | size}}</span> </span></button>
+
+            {% for filter in filters %}
+            <button type="button"  class="btn btn-secondary " data-filter=".{{ filter.name }}"><span  ><i class="mdi mdi-chevron-right"></i> {{ filter.name }}  <span class="badge badge-light badge-dark badge-pill">{{filter.items | size}}</span></span></button>
+
+            {% endfor %}
+
+      
+        </div>
+      </div>
+    </div>
+
+    <div class="row col-12 mb-4 mx-4">
+
+      <button type="button" class="btn btn-link text-light  mt-3">Year:</button>
+      <div class="btn-toolbar mt-3" role="toolbar" aria-label="Toolbar with button groups">
+        <div class="btn-group flex-wrap mr-2 filters " role="group" aria-label="First group">
+
+            {% assign filters = page.gallery | sort: "year" | group_by:"year"  %}
+            <button type="button" data-filter-group="year" class="btn btn-secondary " data-filter="*"><span href="#"  >All  <span class="badge badge-light badge-dark badge-pill">{{page.gallery | size}}</span> </span></button>
+
+            {% for filter in filters %}
+            <button type="button" data-filter-group="year" class="btn btn-secondary " data-filter=".{{ filter.name }}" ><span href="#"  ><i class="mdi mdi-chevron-right"></i> {{ filter.name }}  <span class="badge badge-light badge-dark badge-pill">{{filter.items | size}}</span></span></button>
+
+            {% endfor %}
+      
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row grid col-12 m-0 p-0">
+      {% for image in page.gallery %}
+
+      <div class="col-12 col-md-6 col-lg-3 px-5 m-0 gallery-image {{image.event}} {{image.year}}" style=" position: relative; display: inline-block;">
+        <div class="story py-5 story-list clearfix row" style="height: auto;">
+          <div class="story-image animated fadeInRight delay-0-5s " style=" position: relative;">
+            <div class="img-container" data-src="{{image.image}}" data-fancybox="{{image.event}}-{{image.year}}" data-caption="{{image.caption}}">
+              <img class=" animated fadeInLeft" src="{{image.image}}">
+            </div>
+            <h4 class="text-light text-center wow animated fadeInUp delay-1-2s ">{{ image.caption }}</h4>
+          </div>
+  
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+
+  </div>
+</div>

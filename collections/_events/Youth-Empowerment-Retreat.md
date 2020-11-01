@@ -8,4 +8,6 @@ description: >-
   professional network, molds your future, and disseminates knowledge from
   experienced professionals!
 shortName: yer
+hidden: false
+
 ---
