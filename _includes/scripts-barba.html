@@ -123,6 +123,8 @@
 				tl.from('#hero-button1', { opacity: 0, duration: 0.5, ease: "power2.out" }, "<0")
 				tl.from('#hero-title', { opacity: 0, y: +100, duration: 0.5, ease: "power1.out" }, "<0.3")
 				tl.from('#header-wrap', { width: 0, duration: 0.5, ease: "power2.out" })
+				tl.from('#primary-menu>ul>li', { opacity: 0, x: +170, stagger: 0.2, duration: 0.5, ease: "power1.out" })
+
 			}
 				
 			 else {
@@ -146,10 +148,12 @@
 					filterInit()
 				}		
 
+				tl.from('#primary-menu>ul>li', { opacity: 0, x: +170, stagger: 0.1, duration: 0.25, ease: "power1.out" })
+
+
 			}
 
 
-			tl.from('#primary-menu>ul>li', { opacity: 0, x: +170, stagger: 0.2, duration: 0.5, ease: "power1.out" })
 			tl.from('#logo', { opacity: 0, duration: 0.5, ease: "power2.out", }, "<0.2")
 			tl.from('#hero-button2', { opacity: 0, duration: 0.5, delay: 1, ease: "power2.out" }, "<-0.5")
 			tl.to('#left-swipe', { top: '0', duration: 0 })
@@ -160,7 +164,6 @@
 
 			console.log("load page effects")
 			pageEffects();
-
 
 
 			// {% for event in site.events %}

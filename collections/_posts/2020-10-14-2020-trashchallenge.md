@@ -1,7 +1,7 @@
 ---
 layout: post
 title: '2020 #TrashChallenge'
-banner_image: /assets/uploads/whatsapp-image-2020-10-10-at-9-46-38-am-2.jpeg
+banner_image: /assets/uploads/whatsapp-image-2020-10-10-at-9-46-38-am-2.jpg
 date: 2020-10-14 00:00:00
 author: Admin
 tags:

@@ -30,7 +30,7 @@ event-pos: 90
 
 	<div class="row container-fluid">
 
-	{% for post in site.posts %}
+	{% for post in site.posts limit:2 %}
 
 		<div class="col-12 col-sm-6 col-lg-5">
 			<div class="story py-5 story-list clearfix row">
@@ -52,7 +52,7 @@ event-pos: 90
 
 
 						<a id="hero-button1" href="{{ post.url }}"
-							class="button button-border button-white button-light button-rounded capitalize notopmargin">
+							class="button button-border button-white button-light button-rounded capitalize notopmargin wow animated fadeInRight delay-2s">
 							<span>Read
 								more</span></a><br class="d-block d-sm-none">
 					</div>
