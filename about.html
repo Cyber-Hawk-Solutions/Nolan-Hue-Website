@@ -10,6 +10,15 @@ paragraph: >-
   Nolan Hue is a social enterprise that creates and facilitates professional
   development opportunities for young people in Antigua and Barbuda and the
   wider Caribbean.
+
+paragraph2: >-
+  Nolan Hue is a social enterprise that creates and facilitates professional
+  development opportunities for young people in Antigua and Barbuda and the
+  wider Caribbean. Nolan Hue is a social enterprise that creates and facilitates professional
+  development opportunities for young people in Antigua and Barbuda and the
+  wider Caribbean. Nolan Hue is a social enterprise that creates and facilitates professional
+  development opportunities for young people in Antigua and Barbuda and the
+  wider Caribbean.
 directors:
   - name: Regis Burton
     position: Director
@@ -23,7 +32,7 @@ directors:
       Leader Regis Burton is an everyday Human Resources Professional who works
       for the Antigua Public Utilities Authority, and serves on the Board of
       Commissioners for the Royal Police Force of Antigua and Barbuda.
-    image: /Regis G. Burton Profile Photo (1).jpg
+    image: assets/uploads/regis-g--burton-profile-photo-1.jpg
     linkedIn: 'http://www.linkedin.com/in/regisburton'
   - name: Lyle Jackson
     position: Director
@@ -140,7 +149,12 @@ team:
 
       <div class="row">
 
-        <div class="col-md-5 wow animated fadeInLeft delay-1s">
+        <div class="d-flex align-self-center col-md-6 wow animated fadeInRight delay-1s  mt-5 mt-md-0">
+          <h3 class="t400 ls0 nott mb-3 font-primary text-light wow animated fadeInUp mt-5 "> {{page.paragraph}} </h3>
+
+        </div>
+
+        <div class="col-md-5  offset-0 offset-md-1 wow animated fadeInLeft delay-1s">
 
           <br>
           <!-- <h4 class="mb-0"><span class="badge badge-secondary font-body">About Us</span></h4> -->
@@ -155,17 +169,17 @@ team:
           </div>
         </div>
 
-        <div class="col-md-6 wow animated fadeInRight delay-1s offset-0 offset-md-1 mt-5 mt-md-0">
-          <h3 class="t400 ls0 nott mb-3 font-primary text-light wow animated fadeInUp mt-5 "> {{page.paragraph}} </h3>
 
-        </div>
       </div>
+
+
     </div>
+
   </div>
 
-  <!-- <div class="container mt-5">
-    <h4 class="t400 ls0 nott mb-3 font-primary text-light wow animated fadeInUp "> {{page.paragraph}}</h4>
-  </div> -->
+  <div class="container mt-5">
+    <p class="t400 ls0 nott mb-3 text-light wow animated fadeIn text-justify " style="font-size: 1.2rem"> {{page.paragraph2}}</p>
+  </div>
 
   <div class="container mt-5">
     {% include team.html %}

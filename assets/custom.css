@@ -410,6 +410,9 @@ z-index: 2;
 
 .team:hover .team-desc { transform: scale(1.05); }
 
+.team-desc p {
+	text-align: justify;
+}
 .joinspeaker .team-image i {
 	position: absolute;
 	top: 50%;
@@ -429,6 +432,7 @@ z-index: 2;
 	min-width: 128%;
 	
 }
+
 
 .team-title {
   position: relative;
@@ -709,7 +713,7 @@ body, #wrapper, .css3-spinner, #header.dark.sticky-header.transparent-header #he
 	height: 100%;
 	width: 103%;
   position: absolute;
-	z-index: 3;
+	z-index: 5;
 	top: 0px;
 	left: 0px;
 }
@@ -898,6 +902,7 @@ body, html {
 	background-color: transparent;
 	background-position: 0 15px, 15px 15px;
 	background-size: 15px 15px;
+	opacity: 0.2;
 }
 
 .about-img2>div {
@@ -954,6 +959,7 @@ body, html {
 	-webkit-line-clamp: 7;
 	-webkit-box-orient: vertical;  
 	overflow: hidden;
+	text-align: justify;
 	
 }
 
@@ -976,4 +982,12 @@ body, html {
 
 #primary-menu ul > li {
 	filter: drop-shadow(0px 1px 4px #1d2229);
+}
+
+#logo {
+	filter: drop-shadow(0px 1px 2px #1d2229);
+}
+
+.text-black {
+	color: #000 !important;
 }
