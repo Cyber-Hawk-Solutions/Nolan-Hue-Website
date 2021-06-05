@@ -154,8 +154,8 @@ gallery:
 
   <div class="row  container-fluid pb-5 ">
 
-    <div class="row col-12 mt-4 mx-4">
-      <button type="button" class="btn btn-link text-light  mt-3">Events:</button>
+    <div class="row col-12 mt-0 mx-4 flex-column align-items-center">
+      <button type="button" class="btn btn-link text-light  mt-3">Filter By Event</button>
       <div class="btn-toolbar pr-3 mt-3" role="toolbar" aria-label="Toolbar with button groups">
         <div class="btn-group flex-wrap mr-2 filters" role="group" aria-label="First group"  data-filter-group="event" >
 
@@ -172,17 +172,17 @@ gallery:
       </div>
     </div>
 
-    <div class="row col-12 mb-4 mx-4">
+    <div class="row col-12 mb-4 mx-4 flex-column align-items-center">
 
-      <button type="button" class="btn btn-link text-light  mt-3">Year:</button>
+      <button type="button" class="btn btn-link text-light  mt-3">Filter Event By Year</button>
       <div class="btn-toolbar mt-3" role="toolbar" aria-label="Toolbar with button groups">
         <div class="btn-group flex-wrap mr-2 filters " role="group" aria-label="First group">
 
             {% assign filters = page.gallery | sort: "year" | group_by:"year"  %}
-            <button type="button" data-filter-group="year" class="btn btn-secondary " data-filter="*"><span href="#"  >All  <span class="badge badge-light badge-dark badge-pill">{{page.gallery | size}}</span> </span></button>
+            <button type="button" data-filter-group="year" class="btn btn-secondary " data-filter="*"><span href="#"  >All  </span></button>
 
             {% for filter in filters %}
-            <button type="button" data-filter-group="year" class="btn btn-secondary " data-filter=".{{ filter.name }}" ><span href="#"  ><i class="mdi mdi-chevron-right"></i> {{ filter.name }}  <span class="badge badge-light badge-dark badge-pill">{{filter.items | size}}</span></span></button>
+            <button type="button" data-filter-group="year" class="btn btn-secondary " data-filter=".{{ filter.name }}" ><span href="#"  ><i class="mdi mdi-chevron-right"></i> {{ filter.name }}  </span></button>
 
             {% endfor %}
       
