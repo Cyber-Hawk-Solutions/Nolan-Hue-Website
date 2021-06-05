@@ -1,7 +1,30 @@
+---
+---
 /* ----------------------------------------------------------------
 	Canvas: Headphones Demo
 	Version: 1.0
 -----------------------------------------------------------------*/
+html {
+	--titlestroke1: 0%;
+	--titlestroke2: 0%;
+	--titlestroke3: 0%;
+
+}
+
+@font-face {
+  font-family: "Uniserv";
+  src: url("./css/fonts/Univers-light-normal.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Uniserv";
+  src: url("./css/fonts/UniversLTStd-Bold.ttf") format("truetype");
+  font-weight: bold;
+  /* font-style: italic; */
+}
+
 
 
 /* ----------------------------------------------------------------
@@ -990,4 +1013,73 @@ body, html {
 
 .text-black {
 	color: #000 !important;
+}
+
+.section-home-events .home-event-image {
+	/* filter: hue-rotate(-26deg) saturate(1.1); */
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 80vh;
+	background-size: cover;
+}
+
+.section-home-events .event-row {
+	height: 100vh;
+	position: relative;
+}
+
+.section-home-events .title-row {
+	height: 100vh;
+	position: relative;
+}
+
+.section-home-events .home-event-title {
+	/* filter: hue-rotate(-26deg) saturate(1.1); */
+	position: absolute;
+	top: 0;
+	left: 42px;
+	height: 80vh;
+	background-size: cover;
+
+
+	h1 {
+		height: max-content;
+		width: min-content;
+		&:before,
+		&:after {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 0;	
+			height: 1px;
+			margin: 5px 0 0;
+			transition:  all 0.2s ease-in-out;;
+			transition-duration: 0.75s;
+			opacity: 1;
+			background-color: darken(#dc3545,5%);
+		}
+	}
+
+	.first {
+		&:before,
+		&:after {
+			width: var(--titlestroke1);
+
+		}
+	}
+	.second {
+		&:before,
+		&:after {
+			width: var(--titlestroke2);
+
+		}
+	}
+	.third {
+		&:before,
+		&:after {
+			width: var(--titlestroke3);
+
+		}
+	}
 }

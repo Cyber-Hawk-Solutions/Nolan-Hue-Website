@@ -6,7 +6,7 @@
   </head>
 
   <body 
-    data-barba="wrapper" class="{{ page.path }} no-transition stretched layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %} {% if page.layout != 'home' %} {% endif %}">
+    data-barba="wrapper" class="{{ page.path }}  background-grey no-transition stretched layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %} {% if page.layout != 'home' %} {% endif %}">
 
     {%- comment -%} {% include browser-upgrade.html %} {%- endcomment -%}
     

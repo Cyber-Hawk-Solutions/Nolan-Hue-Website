@@ -21,8 +21,8 @@ title: Title
 				<!-- Entry Meta
 								============================================= -->
 				<ul class="entry-meta clearfix text-left">
-					<li><i class="icon-calendar3"></i> {{page.date | date_to_string: "ordinal", "US"}}</li>
-					<li><i class="icon-user"></i> {{ page.author }}</li>
+					{% if page.date %}<li><i class="icon-calendar3"></i> {{page.date | date_to_string: "ordinal", "US"}}</li>{% endif %}
+					{% if page.author %}<li><i class="icon-user"></i> {{ page.author }}</li>{% endif %}
 					{% if page.tags %}<li><i class="icon-folder-open"></i> {{page.tags | array_to_sentence_string }}</li>{% endif %}
 
 				</ul><!-- .entry-meta end -->

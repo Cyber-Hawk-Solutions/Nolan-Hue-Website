@@ -125,6 +125,39 @@
 				tl.from('#header-wrap', { width: 0, duration: 0.5, ease: "power2.out" })
 				tl.from('#primary-menu>ul>li', { opacity: 0, x: +170, stagger: 0.2, duration: 0.5, ease: "power1.out" })
 
+				let eventsTl = gsap.timeline()
+				.fromTo('.section-home-events .home-event-title .first', {y: "+40vh", opacity: 1}, {y: "-70vh",  duration: 6}, 0)
+				.fromTo('.section-home-events .home-event-title .first2',{y: "+32vh", opacity: -5}, { y: "-80vh",  duration: 6, opacity: 2.1}, "=-6")
+				.fromTo('html', 
+					{"--titlestroke1": 0}, {"--titlestroke1": "100%",  duration: 0.5}, 3.2)
+
+				.to('.section-home-events .home-event-image.first', {x: "-100%", opacity:0, delay:0, duration: 1.5}, 5)
+				.fromTo('.section-home-events .home-event-title .second', {y: "+40vh", opacity: 1}, {y: "-70vh",   duration: 6}, 3)
+				.fromTo('.section-home-events .home-event-title .second2', {y: "+32vh", opacity: -5}, { y: "-80vh",  duration: 6.2, opacity: 2.1}, "=-6")
+				.fromTo('html', 
+					{"--titlestroke3": 0}, {"--titlestroke2": "100%",  duration: 0.5}, 6.2)
+				.to('.section-home-events .home-event-image.second', {x: "-100%", opacity:0, delay:2,  duration: 1.5}, 6.5)
+				.fromTo('.section-home-events .home-event-title .third', {y: "+40vh", opacity: 1}, {y: "-70vh",   duration: 6}, 6)
+				.fromTo('.section-home-events .home-event-title .third2', {y: "+32vh", opacity: -5}, { y: "-80vh",  duration: 6, opacity: 2.1}, "=-6")
+				.fromTo('html', 
+					{"--titlestroke3": 0}, {"--titlestroke3": "100%",  duration: 0.3}, 9.2)
+
+				// .to('.section-home-events .home-event-image.third', {x: "-100%", opacity:0, delay:2, duration: 0.25}, "<0")
+
+
+				
+				let eventsScene = new ScrollMagic.Scene({
+					triggerElement:  '.section-home-events',
+					triggerHook: 0,
+					duration: "400%"
+				})
+
+				.setTween(eventsTl)
+				.setPin('.section-home-events')
+				//.addIndicators()
+				.addTo(controller)
+
+
 			}
 				
 			 else {
