@@ -1087,3 +1087,13 @@ body, html {
 .btn-group > .btn, .btn-group-vertical > .btn {
 	border: solid 0.5px #1d2229;
 }
+
+.year-badge {
+	position: absolute;
+	transform: rotate(90deg);
+	top: 22px;
+	right: -45px;
+	font-weight: 100;
+	letter-spacing: 12px;
+	opacity: 50%;
+}
