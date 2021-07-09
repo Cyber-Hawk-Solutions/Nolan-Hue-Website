@@ -1,7 +1,7 @@
 ---
 title: About
-first_about_image: "assets/uploads/ne.jpg"
-second_about_image: "assets/images/alumni/1.jpg"
+first_about_image: "/assets/uploads/yer-2019---day-2---16.jpg"
+second_about_image: "/assets/uploads/whatsapp-image-2020-10-31-at-08-55-42.jpeg"
 values:
   - Professional Development
   - Empowerment
