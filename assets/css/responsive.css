@@ -153,6 +153,10 @@
 
 @media (max-width: 991.98px) {
 
+	.portfolio-parallax .portfolio-image {
+		background-size: cover ;
+	}
+
 	#content {
 		margin-top: 4rem;
 	}
