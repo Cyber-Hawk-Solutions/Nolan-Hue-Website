@@ -9,7 +9,7 @@
       {% assign reverse = false %}
       {% for person in page.directors %}
 
-      <div class="team py-5 team-list clearfix row {% if reverse == true %} d-flex flex-row-reverse {% endif %}">
+      <div class="team my-5 team-list clearfix row {% if reverse == true %} d-flex flex-row-reverse {% endif %}">
         <div class="team-image col-sm-12 col-lg-4 mb-5">
           <div class="img-container wow animated fadeInLeft delay-1s">
             <img src="{{ person.image | relative_url}}" alt="Nix Maxwell" class="scroll-team-img ">
@@ -57,7 +57,7 @@
       {% assign reverse = false %}
       {% for person in page.team %}
 
-      <div class="team py-5 team-list clearfix row {% if reverse == true %} d-flex flex-row-reverse {% endif %}">
+      <div class="team my-5 team-list clearfix row {% if reverse == true %} d-flex flex-row-reverse {% endif %}">
         <div class="team-image col-sm-12 col-lg-4 mb-5">
           <div class="img-container wow animated fadeInLeft delay-1s">
             <img src="{{ person.image | relative_url}}" alt="Nix Maxwell" class="scroll-team-img ">
