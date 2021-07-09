@@ -19,11 +19,16 @@
       <h1 style="font-size: 48px;  position: absolute; top:68%; white-space: pre-wrap; width: 340vw;" class="scroll-title">
         <strong> {% for  i in (1..25)  %}{{event.name}} {% endfor %}</strong>
       </h1>
-      <div class="parallax-effect parallax-effect-{% increment i %}" style=" background-color: {% cycle "bg2": "#444", "#ffc013", "#dc3545" %} "></div>
+      <div class="d-none d-md-block parallax-effect parallax-effect-{% increment i %}" style=" background-color: {% cycle "bg2": "#444", "#ffc013", "#dc3545" %} "></div>
       <div  class="d-none d-lg-block portfolio-image  {% if reverse %}  p-right {% elsif reverse==false %}  p-left {% endif %} {{event.shortName}}-distort"   style="background-image: url({{ event.banner_image | relative_url}}); height: 100%!important; background-position: right; background-size: contain; background-position-x: right;" data-bottom-top="background-position:0px 300px;" data-top-bottom="background-position:0px -300px;"><div class="portfolio-overlay"></div></div>
       <div  class="d-md-block d-lg-none portfolio-image {% if reverse %}  p-right {% elsif reverse==false %}  p-left {% endif %} img-fluid"   style="background-image: url({{ event.banner_image | relative_url}}); height: 100%!important; background-position: right; background-size: contain; background-position-x: right;" data-bottom-top="background-position:0px 300px;" data-top-bottom="background-position:0px -300px;"><div class="portfolio-overlay"></div></div>
 
-      <div class="portfolio-desc text-light">
+      <div  class="d-sm-block d-lg-none portfolio-image">
+        <img src="{{ event.banner_image | relative_url}}" alt="">
+      </div>
+
+
+      <div class="d-none d-md-block portfolio-desc text-light">
         <h3><a href="#" class="text-light">{{event.subtitle}}</a></h3>
         <!-- <span><a href="#">Media</a>, <a href="#">Icons</a></span> -->
         <div class="portfolio-divider"><div>

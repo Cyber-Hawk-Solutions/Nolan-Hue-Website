@@ -153,6 +153,10 @@
 
 @media (max-width: 991.98px) {
 
+	#content {
+		margin-top: 4rem;
+	}
+
 	#wrapper {
 		width: 100%;
 		margin: 0;
