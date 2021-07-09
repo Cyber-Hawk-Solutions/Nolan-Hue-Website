@@ -126,17 +126,17 @@
 				tl.from('#primary-menu>ul>li', { opacity: 0, x: +170, stagger: 0.2, duration: 0.5, ease: "power1.out" })
 
 				let eventsTl = gsap.timeline()
-				.fromTo('.section-home-events .home-event-title .first', {y: "+43vh", opacity: 1}, {y: "-79vh",  duration: 6}, 0)
-				.fromTo('.section-home-events .home-event-title .first2',{y: "+35vh", opacity: -5}, { y: "-86vh",  duration: 6, opacity: 2.1}, "=-6")
+				.fromTo('.section-home-events .home-event-title .first', {y: "+35vh", opacity: 1}, {y: "-76vh",  duration: 4}, 0)
+				.fromTo('.section-home-events .home-event-title .first2',{y: "+30vh", opacity: -5}, { y: "-92vh",  duration: 4.2, opacity: 2.1}, "=-4")
 				.fromTo('html', 
-					{"--titlestroke1": 0}, {"--titlestroke1": "100%",  duration: 0.5}, 3.2)
+					{"--titlestroke1": 0}, {"--titlestroke1": "100%",  duration: 0.5}, 2.2)
 
-				.to('.section-home-events .home-event-image.first', {x: "-100%", opacity:0, delay:0, duration: 1.5}, 5)
+				.fromTo('.section-home-events .home-event-image.first', {zIndex: 3}, {x: "-100%", opacity:0, delay:0, duration: 1.5}, 5)
 				.fromTo('.section-home-events .home-event-title .second', {y: "+43vh", opacity: 1}, {y: "-79vh",   duration: 6}, 3)
-				.fromTo('.section-home-events .home-event-title .second2', {y: "+35vh", opacity: -5}, { y: "-86vh",  duration: 6.2, opacity: 2.1}, "=-6")
+				.fromTo('.section-home-events .home-event-title .second2', {y: "+32vh", opacity: -5}, { y: "-86vh",  duration: 6.2, opacity: 2.1}, "=-6")
 				.fromTo('html', 
 					{"--titlestroke3": 0}, {"--titlestroke2": "100%",  duration: 0.5}, 6.2)
-				.to('.section-home-events .home-event-image.second', {x: "-100%", opacity:0, delay:2,  duration: 1.5}, 6.5)
+				.fromTo('.section-home-events .home-event-image.second',{zIndex: 2}, {x: "-100%", opacity:0, delay:2,  duration: 1.5}, 6.5)
 				.fromTo('.section-home-events .home-event-title .third', {y: "+43vh", opacity: 1}, {y: "-79vh",   duration: 6}, 6)
 				.fromTo('.section-home-events .home-event-title .third2', {y: "+35vh", opacity: -5}, { y: "-86vh",  duration: 6, opacity: 2.1}, "=-6")
 				.fromTo('html', 
@@ -149,7 +149,7 @@
 				let eventsScene = new ScrollMagic.Scene({
 					triggerElement:  '.section-home-events',
 					triggerHook: 0,
-					duration: "400%"
+					duration: "300%"
 				})
 
 				.setTween(eventsTl)

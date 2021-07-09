@@ -6,7 +6,7 @@ link: /events
 events:
   - title: Youth Empowerment Retreat
     subtitle: An exquisite 3 day deep dive into professional development 
-    thumbnail_image: /assets/uploads/yer-2019---day-2---28.jpg
+    thumbnail_image: /assets/uploads/yer-2019---day-2---16.jpg
   - title: Networking Event
     subtitle: Creating opportunities to cultivate professional associations
     thumbnail_image: /assets/uploads/networking-event-92.jpg

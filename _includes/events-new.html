@@ -18,7 +18,7 @@
 			<div class="col-6">
 				<div class="row event-row">
 					{% for eventImg in events.events %}
-					<div style="background-image: url({{eventImg.thumbnail_image}});" class="w-100 home-event-image {% cycle  "third","second", "first" %}" alt=""></div>
+					<div style="background-image: url({{eventImg.thumbnail_image}});" class="w-100 home-event-image {% cycle "first", "second", "third"%}" alt=""></div>
 					{% endfor %}
 				</div>
 
@@ -60,7 +60,7 @@
 
 		<div class="row py-5 my-5">
 
-			{% for event in events.events %}
+			{% for event in events.events  %}
 
 			<div class="row w-100 mx-4 d-flex justify-content-center" style="">
 				<h1 class="{% cycle "first","second","third" %} text-center" style=" font-size: 3rem; line-height: 3rem; color: #dee2e6; text-decoration: underline 2px #dc3545; margin-bottom: 16px;">{{event.title}}</h1>
