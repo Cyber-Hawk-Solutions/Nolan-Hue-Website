@@ -1,5 +1,8 @@
 ---
 ---
+
+@charset "UTF-8";
+
 /* ----------------------------------------------------------------
 	Canvas: Headphones Demo
 	Version: 1.0
@@ -1134,4 +1137,15 @@ section#slider {
 	font-weight: 300;
 	text-shadow: #000000d6 0px 2px 5px;
 	line-height: 100%;
+}
+
+.full-screen.force-full-screen.rellax:before {
+	content: '';
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background: rgb(51, 51, 51);
+	opacity: 0.1;
+	position: absolute;
 }
